@@ -1,0 +1,65 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	const int size = 5;
+	int b[size][size], min = -100, max = 100;
+	int i, j, index_min = 0, index_max = 0, index_min1 = 0, index_max1 = 0, sum = 0, p;
+	for (int y = 0; y < 5; y++)
+	{
+		for (int x = 0; x < 5; x++)
+		{
+			b[y][x] = rand() % (max - min + 1) + min;
+		}
+	}
+	for (int y = 0; y < 5; y++)
+	{
+		for (int x = 0; x < 5; x++)
+		{
+			cout << b[y][x] << "\t";
+		}
+		cout << endl;
+	}
+	int shift;
+	cout << "¬ведите число сдвига\n";
+	cin >> shift;
+	int a;
+	cout << "≈сли вы ведете 1 то сдвиг массива произойдет в право.≈сли вы не наберете 1 то в противном случае сдвиг произойдет в лево: \n";
+	cin >> a;
+	if (a == 1)
+	{
+		for (int k = 0; k < shift; k++)
+		{
+			int temp = b[k][size - 1];
+			for (int p = size - 1; p > 0; p--)
+			{
+				b[k][p] = b[k][p - 1];
+			}
+			b[0][0] = temp;
+		}
+	}
+	else
+	{
+		for (int k = 0; k < shift; k++)
+		{
+			int temp = b[0][0];
+			for (int p = 0; p < size - 1; p++)
+				b[k][p] = b[k][p + 1];
+			b[k][size - 1] = temp;
+		}
+
+	}
+	cout << "ћассив уже с сдвигом: \n";
+	for (int y = 0; y < 5; y++)
+	{
+		for (int x = 0; x < 5; x++)
+		{
+			cout << b[y][x] << "\t";
+		}
+		cout << endl;
+	}
+	cout << endl;
+}

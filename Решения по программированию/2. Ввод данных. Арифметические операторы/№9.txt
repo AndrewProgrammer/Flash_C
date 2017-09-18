@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double D, L, pi = 3.14;
+	cout << "Enter the length of wire\n";
+	cin >> L;
+	D = L / pi;
+	cout << "The Diametr of wire\n" << D << "sm"  << endl;
+}

@@ -1,0 +1,47 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+double sum(double a, double b)
+{
+	double c;
+	c = a + b;
+	return c;
+}
+double sub(double a, double b)
+{
+	double c;
+	c = a - b;
+	return c;
+}
+double mul(double a, double b)
+{
+	double c;
+	c = a * b;
+	return c;
+}
+double del(double a, double b)
+{
+	double c;
+	c = a / b;
+	return c;
+}
+void main()
+{
+	while (1)
+	{
+		setlocale(0, "ru");
+		double a, b;
+		cout << "Enter 2 numbers: \n";
+		cin >> a >> b;
+		cout << sum(a, b) << endl;
+		cout << sub(a, b) << endl;
+		cout << mul(a, b) << endl;
+		cout << del(a, b) << endl;
+		bool c = false;
+		cin >> c;
+		if (c)
+		{
+			break;
+		}
+	}
+}

@@ -1,0 +1,109 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+ double a, b;
+ cout << "Enter a";
+ cin >> a;
+ cout << "Enter b";
+ cin >> b;
+ cout << "a+b=" << a + b << "\n";
+ cout << "Enter a";
+ cin >> a;
+ cout << "Enter b";
+ cin >> b;
+ cout << "a-b=" << a - b << "\n";
+ cout << "Enter a";
+ cin >> a;
+ cout << "Enter b";
+ cin >> b;
+ cout << "a*b=" << a * b << "\n";
+ cout << "Enter a";
+ cin >> a;
+ cout << "Enter b";
+ cin >> b;
+ cout << "a/b=" << a / b << "\n";
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+void main()
+{
+ int a, b;
+ cout << "Enter a";
+ cin >> a;
+ cout << "Enter b";
+ cin >> b;
+ cout << "a+b=" << a + b << "\n";
+ cout << "Enter a";
+ cin >> a;
+ cout << "Enter b";
+ cin >> b;
+ cout << "a-b=" << a - b << "\n";
+ cout << "Enter a";
+ cin >> a;
+ cout << "Enter b";
+ cin >> b;
+ cout << "a*b=" << a * b << "\n";
+ cout << "Enter a";
+ cin >> a;
+ cout << "Enter b";
+ cin >> b;
+ cout << "a/b=" << a / b << "\n";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{

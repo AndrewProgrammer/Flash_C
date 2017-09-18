@@ -1,0 +1,30 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	int b[5][5], min = -10, max = 40;
+	for (int y = 0; y < 5; y++)
+	{
+		for (int x = 0; x < 5; x++)
+		{
+			b[y][x] = rand() % (max - min + 1) + min;
+		}
+	}
+	for (int k = 0; k < 5; k++)
+	{
+		int sum = 0;
+		for (int j = 0; j < 5; j++)
+		{
+			cout.width(5);
+			cout << b[j][k];
+			if (b[k][j] >= 0)
+			{
+				sum += b[k][j];
+			}
+		}
+		cout << " --- " << sum << " = Ñףללא " << k << " -מדמ סעמכבצא" << endl;
+	}
+}

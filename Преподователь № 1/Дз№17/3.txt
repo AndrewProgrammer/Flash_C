@@ -1,0 +1,37 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 10;
+	char a[size];
+	srand(time(0));
+	rand();
+	for (int k = 0; k < size; k++)
+	{
+		a[k] = rand() % 256;
+	}
+	cout << "ћассив с рандомными числами: \n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << a[j] << ' ';
+	}
+	cout << endl;
+	cout << "—писок который определ€ет каждый элемент массива:\n";
+	for (int i = 0; i < size; i++)
+	{
+		if (a[i] >= '0' && a[i] <= '9')
+		{
+			cout << "Ёлемент массива = число\n";
+		}
+		else if (a[i] >= 'a' && a[i] <= 'z' || a[i] >= 'A' && a[i] <= 'Z')
+		{
+			cout << "Ёлемент массива = символ\n";
+		}
+		else
+		{
+			cout << "Ёлемент массива = знак пунктуации\n";
+		}
+	}
+}

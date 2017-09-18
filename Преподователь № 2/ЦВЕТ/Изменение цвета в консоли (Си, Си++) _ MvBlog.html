@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://mvblog.ru/archives/144 -->
+<html lang="ru-RU"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="http://mvblog.ru/wordpress/wp-content/themes/tiny-forge/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://mvblog.ru/wordpress/wp-content/themes/tiny-forge/images/favicon.ico" type="image/x-icon">
+<title>Изменение цвета в консоли (Си, Си++) | MvBlog</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://mvblog.ru/wordpress/xmlrpc.php">
+<link rel="stylesheet" href="http://mvblog.ru/wordpress/wp-content/themes/tiny-forge/layout.css">
+<!--[if lt IE 9]>
+<script src="http://mvblog.ru/wordpress/wp-content/themes/tiny-forge/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<!-- added to the blog header --><meta name="author" content="Михаил Выродов">
+<!-- All in One SEO Pack 2.2.5.1 by Michael Torbert of Semper Fi Web Design[568,620] -->
+<link rel="author" href="https://plus.google.com/u/0/113524328397972897126/posts">
+<meta name="description" content="Продолжаем устранять пробелы в знаниях языка Си. Сегодня я расскажу о том, как изменить цвет фона и выводимого текста в консоли. Для изменения фона и текста">
+
+<meta name="keywords" content="c,Консоль,Полезно,Программисту">
+
+<link rel="canonical" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/Изменение цвета в консоли (Си, Си++) _ MvBlog.html">
+<meta property="og:title" content="Изменение цвета в консоли (Си, Си++) | MvBlog">
+<meta property="og:type" content="activity">
+<meta property="og:url" content="http://mvblog.ru/archives/144">
+<meta property="og:image" content="http://mvblog.ru/wordpress/wp-content/uploads/2013/11/test_color1.png">
+<meta property="og:site_name" content="MvBlog">
+<meta property="og:description" content="Продолжаем устранять пробелы в знаниях языка Си. Сегодня я расскажу о том, как изменить цвет фона и выводимого текста в консоли. Для изменения фона и текста используются разные методы, которые сейчас рассмотрим. Как изменять цвет фона Итак, чтобы изменить фон, будем использовать функцию system, в которую будем передавать строку следующего вида: &quot;color &lt;A&gt;&lt;B&gt;&quot;, где &lt;A&gt; и &lt;B&gt; — шестнадцатеричные цифры — первая задает цвет фона, а вторая — цвет переднего плана (цвет шрифта). Значения цифр  0 — черный 1 — синий 2 — зеленый 3 — голубой 4 — красный 5 — лиловый 6 — желтый 7 — белый 8 — серый 9 — свело-синий A — светло-зеленый B — светло-голубой С — светло-красный E — светло-желтый F — ярко-белый  Пример system(&quot;color F0&quot;); // Установка белого фона и черного текста Изменение цвета отдельных слов Думаю с цветом фон проблем не возникло, тогда идем дальше, будем менять цвет слов, символов, а также фон за ними. В этом случае наши действия похожи — нам придется">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Продолжаем устранять пробелы в знаниях языка Си. Сегодня я расскажу о том, как изменить цвет фона и выводимого текста в консоли. Для изменения фона и текста используются разные методы, которые сейчас рассмотрим. Как изменять цвет фона Итак, чтобы изменить фон, будем использовать функцию system, в которую будем передавать строку следующего вида: &quot;color &lt;A&gt;&lt;B&gt;&quot;, где &lt;A&gt; и &lt;B&gt; — шестнадцатеричные цифры — первая задает цвет фона, а вторая — цвет переднего плана (цвет шрифта). Значения цифр  0 — черный 1 — синий 2 — зеленый 3 — голубой 4 — красный 5 — лиловый 6 — желтый 7 — белый 8 — серый 9 — свело-синий A — светло-зеленый B — светло-голубой С — светло-красный E — светло-желтый F — ярко-белый  Пример system(&quot;color F0&quot;); // Установка белого фона и черного текста Изменение цвета отдельных слов Думаю с цветом фон проблем не возникло, тогда идем дальше, будем менять цвет слов, символов, а также фон за ними. В этом случае наши действия похожи — нам придется">
+<meta itemprop="image" content="http://mvblog.ru/wordpress/wp-content/uploads/2013/11/test_color1.png">
+		<script async="" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/144"></script><script type="text/javascript" async="" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/watch.js"></script><script type="text/javascript" async="" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/ga.js"></script><script type="text/javascript" async="" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/ga.js"></script><script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-45809328-1']);
+		  _gaq.push(['_trackPageview']);
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="MvBlog » Лента" href="http://mvblog.ru/feed">
+<link rel="alternate" type="application/rss+xml" title="MvBlog » Лента комментариев" href="http://mvblog.ru/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="MvBlog » Лента комментариев к «Изменение цвета в консоли (Си, Си++)»" href="http://mvblog.ru/archives/144/feed">
+<link rel="stylesheet" id="v48fv_images-css" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/images.css" type="text/css" media="all">
+<link rel="stylesheet" id="v48fv_front-css" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/front.css" type="text/css" media="all">
+<link rel="stylesheet" id="v48fv_common-css" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/common.css" type="text/css" media="all">
+<link rel="stylesheet" id="tinyforge-fonts-css" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="tinyforge-style-css" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='tinyforge-ie-css'  href='http://mvblog.ru/wordpress/wp-content/themes/tiny-forge/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="elusive-iconfont-style-css" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/elusive-webfont.css" type="text/css" media="all">
+<link rel="stylesheet" id="core3.0-css" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/shCore.css" type="text/css" media="all">
+<link rel="stylesheet" id="core-Default3.0-css" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/shCoreDefault.css" type="text/css" media="all">
+<link rel="stylesheet" id="theme-Default3.0-css" href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/shThemeDefault.css" type="text/css" media="all">
+<!-- This site uses the Google Analytics by Yoast plugin v5.3.2 - Universal disabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-45809328-1']);
+	_gaq.push(['_gat._forceSSL']);
+	_gaq.push(['_trackPageview']);
+
+	(function () {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+<!-- / Google Analytics by Yoast -->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://mvblog.ru/wordpress/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://mvblog.ru/wordpress/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Как перемещать курсор в консоли (C, C++)" href="http://mvblog.ru/archives/125">
+<link rel="next" title="Новые выпуски СтудLife" href="http://mvblog.ru/archives/155">
+<meta name="generator" content="WordPress 4.1.5">
+<link rel="shortlink" href="http://mvblog.ru/?p=144">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e2e2e2; }
+</style>
+<script type="text/javascript" async="" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/embed.js"></script><script async="" type="text/javascript" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/count.js"></script><script async="" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/count-data.js"></script></head>
+
+<body class="single single-post postid-144 single-format-standard custom-background custom-font-enabled single-author">
+
+<noscript>
+	&lt;div id="no-javascript"&gt;
+		Advanced features of this website require that you enable JavaScript in your browser. Thank you!	&lt;/div&gt;
+</noscript>
+
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+					<div class="site-branding" itemscope="" itemtype="http://schema.org/WPHeader">
+				<h1 class="site-title"><a href="http://mvblog.ru/" title="MvBlog" rel="home">MvBlog</a></h1>
+				<h2 class="site-description">Блог Михаила Выродова</h2>
+			</div>
+				
+		<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+			<h3 class="menu-toggle">Меню</h3>
+			<a class="assistive-text" href="http://mvblog.ru/archives/144#content" title="Skip to content">Skip to content</a>
+			<div class="menu-%d0%bc%d0%b5%d0%bd%d1%8e-1-container"><ul id="menu-%d0%bc%d0%b5%d0%bd%d1%8e-1" class="nav-menu"><li id="menu-item-302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-302"><a href="http://mvblog.ru/">Главная</a></li>
+<li id="menu-item-303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-303"><a href="http://mvblog.ru/about">Информация</a></li>
+<li id="menu-item-304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-304"><a href="http://mvblog.ru/feed">RSS записей</a></li>
+<li id="menu-item-305" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-305"><a href="http://mvblogru.disqus.com/latest.rss" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;http://mvblogru.disqus.com/latest.rss&#39;, &#39;RSS комментариев&#39;]);">RSS комментариев</a></li>
+</ul></div>		</nav><!-- #site-navigation -->
+
+				<!-- Custom Header - Start -->
+														<!-- Custom Header - End -->
+
+	</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			<!-- added to the content header -->
+				
+	<article id="post-144" class="post-144 post type-post status-publish format-standard hentry category-programmer tag-c tag-21 tag-16" itemscope="" itemtype="http://schema.org/Article">
+				<header class="entry-header">
+						<h1 class="entry-title" itemprop="headline">Изменение цвета в консоли (Си, Си++)</h1>
+						<div class="entry-meta"><a href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/Изменение цвета в консоли (Си, Си++) _ MvBlog.html" title="01:59" rel="bookmark"><time class="entry-date updated" datetime="2013-09-28T01:59:11+00:00" itemprop="datePublished">28 Сентябрь 2013</time></a> <span class="meta-separator">•</span> <span class="by-author"><span class="author vcard" itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name"><a class="url fn n" href="http://mvblog.ru/archives/author/mike_device" title="Смотреть все статьи от Михаил Выродов" rel="author" itemprop="url">Михаил Выродов</a></span></span></span>  
+									<span class="meta-separator">•</span> <a href="http://mvblog.ru/archives/144#disqus_thread" title="Comment on Изменение цвета в консоли (Си, Си++)" data-disqus-identifier="144 http://mvblog.ru/wordpress/?p=144">7 Комментариев</a>											</div><!-- .entry-meta -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content" itemprop="articleBody">
+			<p style="text-align: left;">Продолжаем устранять пробелы в знаниях языка Си. Сегодня я расскажу о том, <em>как изменить&nbsp;цвет фона и выводимого текста в консоли</em>. Для изменения фона и текста используются разные методы, которые сейчас рассмотрим.<span id="more-144"></span></p>
+<h1 style="text-align: left;">Как изменять цвет фона</h1>
+<p style="text-align: left;">Итак, чтобы изменить фон, будем использовать функцию&nbsp;<b>system</b>, в которую будем передавать строку следующего вида:&nbsp;<i>"color&nbsp;<span style="color: #0000ff;">&lt;A&gt;</span><span style="color: #339966;">&lt;B&gt;</span>"</i>, где&nbsp;<span style="color: #0000ff;">&lt;A&gt;</span>&nbsp;и&nbsp;<span style="color: #339966;">&lt;B&gt;&nbsp;—&nbsp;</span>шестнадцатеричные цифры&nbsp;—&nbsp;<span style="color: #3366ff;">первая</span> задает цвет фона, а<span style="color: #339966;"> вторая&nbsp;—&nbsp;</span>цвет переднего плана (цвет шрифта).</p>
+<h1 style="text-align: left;">Значения цифр</h1>
+<ul style="text-align: left;">
+<li>0&nbsp;—&nbsp;черный</li>
+<li>1&nbsp;—&nbsp;синий</li>
+<li>2&nbsp;—&nbsp;зеленый</li>
+<li>3&nbsp;—&nbsp;голубой</li>
+<li>4&nbsp;—&nbsp;красный</li>
+<li>5&nbsp;—&nbsp;лиловый</li>
+<li>6&nbsp;—&nbsp;желтый</li>
+<li>7&nbsp;—&nbsp;белый</li>
+<li>8&nbsp;—&nbsp;серый</li>
+<li>9&nbsp;—&nbsp;свело-синий</li>
+<li>A&nbsp;—&nbsp;светло-зеленый</li>
+<li>B&nbsp;—&nbsp;светло-голубой</li>
+<li>С&nbsp;—&nbsp;светло-красный</li>
+<li>E&nbsp;—&nbsp;светло-желтый</li>
+<li>F&nbsp;—&nbsp;ярко-белый</li>
+</ul>
+<h2 style="text-align: left;">Пример</h2>
+<div><div id="highlighter_28829" class="syntaxhighlighter notranslate c"><div class="toolbar"><span><a href="http://mvblog.ru/archives/144#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="c functions bold">system</code><code class="c plain">(</code><code class="c string">"color F0"</code><code class="c plain">);&nbsp; </code><code class="c comments">// Установка белого фона и черного текста</code></div></div></td></tr></tbody></table></div></div>
+<h1 style="text-align: left;">Изменение цвета отдельных слов</h1>
+<p style="text-align: left;">Думаю с цветом фон проблем не возникло, тогда идем дальше, будем менять цвет слов, символов, а также фон за ними. В этом случае наши действия похожи&nbsp;—&nbsp;нам придется вызывать всего одну функцию, правда перед этим нужно будет подключить заголовочный файл windows.h, а также получить дескриптор консоли. Для лучшего понимания рассмотрим все в следующем листинге.</p>
+<div><div id="highlighter_866876" class="syntaxhighlighter notranslate c"><div class="toolbar"><span><a href="http://mvblog.ru/archives/144#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="c preprocessor">#include &lt;stdio.h&gt;</code></div><div class="line number2 index1 alt1"><code class="c comments">/*Обязательное подключение файла*/</code></div><div class="line number3 index2 alt2"><code class="c preprocessor">#include &lt;Windows.h&gt;</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="c color1 bold">int</code> <code class="c plain">main() {</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c comments">/*Получаение дескриптора устройства стандартного вывода*/</code></div><div class="line number8 index7 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c color1 bold">HANDLE</code> <code class="c plain">hConsole = GetStdHandle(STD_OUTPUT_HANDLE);</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c comments">/*Установка белого фона за отдельным символом. Цвет символа - черный*/</code></div><div class="line number11 index10 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">SetConsoleTextAttribute(hConsole, (</code><code class="c color1 bold">WORD</code><code class="c plain">) ((15 &lt;&lt; 4) | 0));&nbsp;&nbsp;&nbsp; </code></div><div class="line number12 index11 alt1">&nbsp;</div><div class="line number13 index12 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c keyword bold">return</code> <code class="c plain">0;</code></div><div class="line number14 index13 alt1"><code class="c plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p style="text-align: left;">Как видно из листинга, цвет текста и фона изменяется вызовом функции&nbsp;<i>SetConsoleTextAttribute,&nbsp;</i>которая принимает два параметра: дескриптор консоли и выражение вида&nbsp;<i>(WORD)((<b>Background</b>&nbsp;&lt;&lt; 4) |&nbsp;<b>Text</b>))</i>, где, как вы уже догадались,&nbsp;Background - цвет фона именно за теми символами, которые выводятся, а Text&nbsp;—&nbsp;цвет текста.</p>
+<h1 style="text-align: left;">Примечание</h1>
+<p style="text-align: left;"><span style="line-height: 1.714285714; font-size: 1rem;">В отличие от первого случая с функцией&nbsp;</span><span style="line-height: 1.714285714; font-size: 1rem;">system,&nbsp;</span><span style="line-height: 1.714285714; font-size: 1rem;">параметры&nbsp;</span><span style="line-height: 1.714285714; font-size: 1rem;">Bacground</span><span style="line-height: 1.714285714; font-size: 1rem;">&nbsp;и&nbsp;</span><span style="line-height: 1.714285714; font-size: 1rem;">Text</span><span style="line-height: 1.714285714; font-size: 1rem;">&nbsp;являются числовыми, поэтому необходимо цвета, которые имеют буквенное обозначение, заменять их эквивалентами.&nbsp;</span><em><span style="line-height: 1.714285714; font-size: 1rem;">Например:</span><span style="line-height: 1.714285714; font-size: 1rem;">&nbsp;A = 10, B = 11 и т.д.</span></em></p>
+<h1 style="text-align: left;">Что делать, если не хочется запоминать номера цветов</h1>
+<p style="text-align: left;">Для удобства записи, а также чтобы не запоминать все числа, которые соответствуют цветам, можно создать перечисление, содержащие все цвета. После этого можно будет просто использовать имя цвета вместо соответствующего чисел.</p>
+<div><div id="highlighter_621121" class="syntaxhighlighter notranslate c"><div class="toolbar"><span><a href="http://mvblog.ru/archives/144#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="c keyword bold">enum</code> <code class="c plain">ConsoleColor {</code></div><div class="line number2 index1 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Black = 0, </code></div><div class="line number3 index2 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Blue = 1, </code></div><div class="line number4 index3 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Green = 2, </code></div><div class="line number5 index4 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Cyan = 3, </code></div><div class="line number6 index5 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Red = 4, </code></div><div class="line number7 index6 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Magenta = 5, </code></div><div class="line number8 index7 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Brown = 6, </code></div><div class="line number9 index8 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightGray = 7, </code></div><div class="line number10 index9 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">DarkGray = 8,</code></div><div class="line number11 index10 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightBlue = 9, </code></div><div class="line number12 index11 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightGreen = 10, </code></div><div class="line number13 index12 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightCyan = 11, </code></div><div class="line number14 index13 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightRed = 12, </code></div><div class="line number15 index14 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightMagenta = 13, </code></div><div class="line number16 index15 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Yellow = 14, </code></div><div class="line number17 index16 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">White = 15</code></div><div class="line number18 index17 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">};</code></div></div></td></tr></tbody></table></div></div>
+<p style="text-align: left;">Следует заметить, что если Вам необходимо изменить цвет всего фона, то делать это нужно в&nbsp;<em>первую очередь,</em> так как если вы сделаете иначе, то все, что вы выделили функцией&nbsp;<em>SetConsoleTextAttribute</em>&nbsp;будет иметь другой цвет, заданный в <em>colors</em>.</p>
+<p style="text-align: left;">Листинг рабочей программы</p>
+<div><div id="highlighter_833923" class="syntaxhighlighter notranslate c"><div class="toolbar"><span><a href="http://mvblog.ru/archives/144#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="c preprocessor">#include &lt;stdio.h&gt;</code></div><div class="line number2 index1 alt1"><code class="c preprocessor">#include &lt;Windows.h&gt;// Обязательное подключение файла</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="c keyword bold">enum</code> <code class="c plain">ConsoleColor {</code></div><div class="line number5 index4 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Black = 0,</code></div><div class="line number6 index5 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Blue = 1,</code></div><div class="line number7 index6 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Green = 2,</code></div><div class="line number8 index7 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Cyan = 3,</code></div><div class="line number9 index8 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Red = 4,</code></div><div class="line number10 index9 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Magenta = 5,</code></div><div class="line number11 index10 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Brown = 6,</code></div><div class="line number12 index11 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightGray = 7,</code></div><div class="line number13 index12 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">DarkGray = 8,</code></div><div class="line number14 index13 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightBlue = 9,</code></div><div class="line number15 index14 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightGreen = 10,</code></div><div class="line number16 index15 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightCyan = 11,</code></div><div class="line number17 index16 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightRed = 12,</code></div><div class="line number18 index17 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">LightMagenta = 13,</code></div><div class="line number19 index18 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">Yellow = 14,</code></div><div class="line number20 index19 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">White = 15</code></div><div class="line number21 index20 alt2"><code class="c plain">};</code></div><div class="line number22 index21 alt1">&nbsp;</div><div class="line number23 index22 alt2"><code class="c color1 bold">int</code> <code class="c plain">main() {</code></div><div class="line number24 index23 alt1">&nbsp;</div><div class="line number25 index24 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c comments">/*Получение дескриптора*/</code></div><div class="line number26 index25 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c color1 bold">HANDLE</code> <code class="c plain">hConsole = GetStdHandle(STD_OUTPUT_HANDLE);</code></div><div class="line number27 index26 alt2">&nbsp;</div><div class="line number28 index27 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c comments">/*Цвет всего фона - белый. Цвет всего текста - черный*/</code></div><div class="line number29 index28 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c functions bold">system</code><code class="c plain">(</code><code class="c string">"color F0"</code><code class="c plain">);</code></div><div class="line number30 index29 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c functions bold">puts</code><code class="c plain">(</code><code class="c string">"Hello World!"</code><code class="c plain">);</code></div><div class="line number31 index30 alt2">&nbsp;</div><div class="line number32 index31 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c comments">/*Цвет символов - желтый. Цвет фона - темно-серый*/</code></div><div class="line number33 index32 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">SetConsoleTextAttribute(hConsole, (</code><code class="c color1 bold">WORD</code><code class="c plain">) ((DarkGray &lt;&lt; 4) | Yellow));</code></div><div class="line number34 index33 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c functions bold">printf</code><code class="c plain">(</code><code class="c string">"Hello"</code><code class="c plain">);</code></div><div class="line number35 index34 alt2">&nbsp;</div><div class="line number36 index35 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c comments">/*Цвет символов - светло-зеленый. Цвет фона - желтый*/</code></div><div class="line number37 index36 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">SetConsoleTextAttribute(hConsole, (</code><code class="c color1 bold">WORD</code><code class="c plain">) ((Yellow &lt;&lt; 4) | LightGreen));</code></div><div class="line number38 index37 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c functions bold">puts</code><code class="c plain">(</code><code class="c string">"World!"</code><code class="c plain">);</code></div><div class="line number39 index38 alt2">&nbsp;</div><div class="line number40 index39 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c keyword bold">return</code> <code class="c plain">0;</code></div><div class="line number41 index40 alt2"><code class="c plain">}</code></div></div></td></tr></tbody></table></div></div>
+<h3 style="text-align: left;">Результаты программы</h3>
+<p style="text-align: left;"><a href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/test_color1.png"><img class="alignleft size-full wp-image-148" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/test_color1.png" alt="test_color" width="677" height="103"></a></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+									Метки: <span itemprop="keywords"><a href="http://mvblog.ru/archives/tag/c" rel="tag">C</a>, <a href="http://mvblog.ru/archives/tag/%d0%ba%d0%be%d0%bd%d1%81%d0%be%d0%bb%d1%8c" rel="tag">Консоль</a>, <a href="http://mvblog.ru/archives/tag/%d0%bf%d0%be%d0%bb%d0%b5%d0%b7%d0%bd%d0%be" rel="tag">Полезно</a></span><br><a href="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/Изменение цвета в консоли (Си, Си++) _ MvBlog.html" title="01:59" rel="bookmark"><time class="entry-date updated" datetime="2013-09-28T01:59:11+00:00" itemprop="datePublished">28 Сентябрь 2013</time></a> <span class="meta-separator">•</span> <span itemprop="articleSection"><a href="http://mvblog.ru/archives/category/programmer" rel="category tag">Программисту</a></span> <span class="meta-separator">•</span> <span class="by-author"> <span class="author vcard" itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name"><a class="url fn n" href="http://mvblog.ru/archives/author/mike_device" title="Смотреть все статьи от Михаил Выродов" rel="author" itemprop="url">Михаил Выродов</a></span></span></span>									
+					</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+				<h3>Понравилась статья? Поделись с друзьями:</h3><br>
+				<div align="center" class="share42init" data-url="http://mvblog.ru/archives/144" data-title="Изменение цвета в консоли (Си, Си++)"><span id="share42"><a rel="nofollow" style="display:inline-block;vertical-align:bottom;width:32px;height:32px;margin:0 6px 6px 0;padding:0;outline:none;background:url(http://mvblog.ru/wordpress/share42/icons.png) -0px 0 no-repeat" href="http://mvblog.ru/archives/144#" data-count="vk" onclick="window.open(&#39;http://vk.com/share.php?url=http%3A%2F%2Fmvblog.ru%2Farchives%2F144&amp;title=%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8%20(%D0%A1%D0%B8%2C%20%D0%A1%D0%B8%2B%2B)&amp;description=%D0%9F%D1%80%D0%BE%D0%B4%D0%BE%D0%BB%D0%B6%D0%B0%D0%B5%D0%BC%20%D1%83%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%8F%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B1%D0%B5%D0%BB%D1%8B%20%D0%B2%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D1%8F%D1%85%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%A1%D0%B8.%20%D0%A1%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%20%D1%8F%20%D1%80%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D1%83%20%D0%BE%20%D1%82%D0%BE%D0%BC%2C%20%D0%BA%D0%B0%D0%BA%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C%C2%A0%D1%86%D0%B2%D0%B5%D1%82%20%D1%84%D0%BE%D0%BD%D0%B0%20%D0%B8%20%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D0%B3%D0%BE%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8.%20%D0%94%D0%BB%D1%8F%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%84%D0%BE%D0%BD%D0%B0%20%D0%B8%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0&#39;, &#39;_blank&#39;, &#39;scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0&#39;);return false" title="Поделиться В Контакте" target="_blank"></a><a rel="nofollow" style="display:inline-block;vertical-align:bottom;width:32px;height:32px;margin:0 6px 6px 0;padding:0;outline:none;background:url(http://mvblog.ru/wordpress/share42/icons.png) -32px 0 no-repeat" href="http://mvblog.ru/archives/144#" data-count="twi" onclick="window.open(&#39;https://twitter.com/intent/tweet?text=%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8%20(%D0%A1%D0%B8%2C%20%D0%A1%D0%B8%2B%2B)&amp;url=http%3A%2F%2Fmvblog.ru%2Farchives%2F144&#39;, &#39;_blank&#39;, &#39;scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0&#39;);return false" title="Добавить в Twitter" target="_blank"></a><a rel="nofollow" style="display:inline-block;vertical-align:bottom;width:32px;height:32px;margin:0 6px 6px 0;padding:0;outline:none;background:url(http://mvblog.ru/wordpress/share42/icons.png) -64px 0 no-repeat" href="http://mvblog.ru/archives/144#" data-count="fb" onclick="window.open(&#39;http://www.facebook.com/sharer.php?u=http%3A%2F%2Fmvblog.ru%2Farchives%2F144&#39;, &#39;_blank&#39;, &#39;scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0&#39;);return false" title="Поделиться в Facebook" target="_blank"></a><a rel="nofollow" style="display:inline-block;vertical-align:bottom;width:32px;height:32px;margin:0 6px 6px 0;padding:0;outline:none;background:url(http://mvblog.ru/wordpress/share42/icons.png) -96px 0 no-repeat" href="http://mvblog.ru/archives/144#" onclick="window.open(&#39;https://plus.google.com/share?url=http%3A%2F%2Fmvblog.ru%2Farchives%2F144&#39;, &#39;_blank&#39;, &#39;scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0&#39;);return false" title="Поделиться в Google+" target="_blank"></a><a rel="nofollow" style="display:inline-block;vertical-align:bottom;width:32px;height:32px;margin:0 6px 6px 0;padding:0;outline:none;background:url(http://mvblog.ru/wordpress/share42/icons.png) -128px 0 no-repeat" href="http://mvblog.ru/archives/144#" data-count="dlcs" onclick="window.open(&#39;http://delicious.com/save?url=http%3A%2F%2Fmvblog.ru%2Farchives%2F144&amp;title=%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8%20(%D0%A1%D0%B8%2C%20%D0%A1%D0%B8%2B%2B)&amp;note=%D0%9F%D1%80%D0%BE%D0%B4%D0%BE%D0%BB%D0%B6%D0%B0%D0%B5%D0%BC%20%D1%83%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%8F%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B1%D0%B5%D0%BB%D1%8B%20%D0%B2%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D1%8F%D1%85%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%A1%D0%B8.%20%D0%A1%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%20%D1%8F%20%D1%80%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D1%83%20%D0%BE%20%D1%82%D0%BE%D0%BC%2C%20%D0%BA%D0%B0%D0%BA%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C%C2%A0%D1%86%D0%B2%D0%B5%D1%82%20%D1%84%D0%BE%D0%BD%D0%B0%20%D0%B8%20%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D0%B3%D0%BE%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8.%20%D0%94%D0%BB%D1%8F%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%84%D0%BE%D0%BD%D0%B0%20%D0%B8%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0&#39;, &#39;_blank&#39;, &#39;scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=710, height=660, toolbar=0, status=0&#39;);return false" title="Сохранить закладку в Delicious" target="_blank"></a><a rel="nofollow" style="display:inline-block;vertical-align:bottom;width:32px;height:32px;margin:0 6px 6px 0;padding:0;outline:none;background:url(http://mvblog.ru/wordpress/share42/icons.png) -160px 0 no-repeat" href="http://www.livejournal.com/update.bml?event=http%3A%2F%2Fmvblog.ru%2Farchives%2F144&subject=%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8%20(%D0%A1%D0%B8%2C%20%D0%A1%D0%B8%2B%2B)" title="Опубликовать в LiveJournal" target="_blank"></a><a rel="nofollow" style="display:inline-block;vertical-align:bottom;width:32px;height:32px;margin:0 6px 6px 0;padding:0;outline:none;background:url(http://mvblog.ru/wordpress/share42/icons.png) -192px 0 no-repeat" href="http://mvblog.ru/archives/144#" data-count="odkl" onclick="window.open(&#39;http://www.odnoklassniki.ru/dk?st.cmd=addShare&amp;st._surl=http%3A%2F%2Fmvblog.ru%2Farchives%2F144&amp;title=%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8%20(%D0%A1%D0%B8%2C%20%D0%A1%D0%B8%2B%2B)&#39;, &#39;_blank&#39;, &#39;scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0&#39;);return false" title="Добавить в Одноклассники" target="_blank"></a><a rel="nofollow" style="display:inline-block;vertical-align:bottom;width:32px;height:32px;margin:0 6px 6px 0;padding:0;outline:none;background:url(http://mvblog.ru/wordpress/share42/icons.png) -224px 0 no-repeat" href="http://mvblog.ru/archives/144#" data-count="mail" onclick="window.open(&#39;http://connect.mail.ru/share?url=http%3A%2F%2Fmvblog.ru%2Farchives%2F144&amp;title=%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%86%D0%B2%D0%B5%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8%20(%D0%A1%D0%B8%2C%20%D0%A1%D0%B8%2B%2B)&amp;description=%D0%9F%D1%80%D0%BE%D0%B4%D0%BE%D0%BB%D0%B6%D0%B0%D0%B5%D0%BC%20%D1%83%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%8F%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B1%D0%B5%D0%BB%D1%8B%20%D0%B2%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D1%8F%D1%85%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%A1%D0%B8.%20%D0%A1%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%20%D1%8F%20%D1%80%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D1%83%20%D0%BE%20%D1%82%D0%BE%D0%BC%2C%20%D0%BA%D0%B0%D0%BA%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C%C2%A0%D1%86%D0%B2%D0%B5%D1%82%20%D1%84%D0%BE%D0%BD%D0%B0%20%D0%B8%20%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B8%D0%BC%D0%BE%D0%B3%D0%BE%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8.%20%D0%94%D0%BB%D1%8F%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%84%D0%BE%D0%BD%D0%B0%20%D0%B8%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0&amp;imageurl=null&#39;, &#39;_blank&#39;, &#39;scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0&#39;);return false" title="Поделиться в Моем Мире@Mail.Ru" target="_blank"></a></span></div>
+				<script type="text/javascript" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/share42.js"></script>
+				<br>
+
+				<nav class="nav-single">
+					<h3 class="assistive-text">Post navigation</h3>
+					<span class="nav-previous"><a href="http://mvblog.ru/archives/125" rel="prev"><span class="meta-nav">«</span> Как перемещать курсор в консоли (C, C++)</a></span>
+					<span class="nav-next"><a href="http://mvblog.ru/archives/155" rel="next">Новые выпуски СтудLife <span class="meta-nav">»</span></a></span>
+				</nav><!-- .nav-single -->
+
+				<a name="respond"></a><a name="comments"></a>
+
+				
+<div id="disqus_thread"><iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 1052px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+var disqus_url = 'http://mvblog.ru/archives/144';
+var disqus_identifier = '144 http://mvblog.ru/wordpress/?p=144';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'mvblogru';
+var disqus_title = "Изменение цвета в консоли (Си, Си++)";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=144';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+			<!-- added to the content footer -->
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://mvblog.ru/">
+				<label>
+					<span class="screen-reader-text">Найти:</span>
+					<input type="search" class="search-field" placeholder="Поиск…" value="" name="s" title="Найти:">
+				</label>
+				<input type="submit" class="search-submit" value="Поиск">
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Свежие записи</h3>		<ul>
+					<li>
+				<a href="http://mvblog.ru/archives/861">Создаем проект Windows Forms в Visual Studio на C++</a>
+						</li>
+					<li>
+				<a href="http://mvblog.ru/archives/849">Не получается запустить MongoDB shell в Ubuntu</a>
+						</li>
+					<li>
+				<a href="http://mvblog.ru/archives/845">C# открытие файла ассоциированной с ним программой</a>
+						</li>
+					<li>
+				<a href="http://mvblog.ru/archives/841">Google Chrome: «Не удалось корректно загрузить ваш профиль…»</a>
+						</li>
+					<li>
+				<a href="http://mvblog.ru/archives/836">Установка драйвера для принтеров Canon LBP в Ubuntu</a>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Свежие комментарии</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><p class="comment-author-name" itemprop="name">Виктор</p></span> к записи <a href="http://mvblog.ru/archives/144#comment-168">Изменение цвета в консоли (Си, Си++)</a></li><li class="recentcomments"><span class="comment-author-link"><p class="comment-author-name" itemprop="name">Максим</p></span> к записи <a href="http://mvblog.ru/archives/438#comment-167">Черный экран при запуске Windows 8.1</a></li><li class="recentcomments"><span class="comment-author-link"><p class="comment-author-name" itemprop="name">алан</p></span> к записи <a href="http://mvblog.ru/archives/438#comment-166">Черный экран при запуске Windows 8.1</a></li><li class="recentcomments"><span class="comment-author-link"><p class="comment-author-name" itemprop="name">Геймер</p></span> к записи <a href="http://mvblog.ru/archives/438#comment-165">Черный экран при запуске Windows 8.1</a></li><li class="recentcomments"><span class="comment-author-link"><p class="comment-author-name" itemprop="name">Дмитрий Матвеев</p></span> к записи <a href="http://mvblog.ru/archives/438#comment-164">Черный экран при запуске Windows 8.1</a></li></ul></aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Рубрики</h3>		<ul>
+	<li class="cat-item cat-item-37"><a href="http://mvblog.ru/archives/category/ubuntu">Ubuntu</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://mvblog.ru/archives/category/windows">Windows</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://mvblog.ru/archives/category/blog">Блог</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://mvblog.ru/archives/category/webmaster">Вебмастеру</a>
+</li>
+	<li class="cat-item cat-item-39"><a href="http://mvblog.ru/archives/category/programmer/%d0%bf%d0%b8%d1%88%d0%b5%d0%bc-%d0%bd%d0%b0-c">Пишем на C#</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://mvblog.ru/archives/category/programmer">Программисту</a>
+</li>
+	<li class="cat-item cat-item-47"><a href="http://mvblog.ru/archives/category/services">Сервисы</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="http://mvblog.ru/archives/category/programmer/data-structures">Структуры данных</a>
+</li>
+		</ul>
+</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" class="clear" role="contentinfo" itemscope="" itemtype="http://schema.org/WPFooter">
+	
+						<div id="footer-widgets" class="widget-area three" itemscope="" itemtype="http://schema.org/WPSideBar">
+					
+					
+									</div><!-- #footer-widgets -->
+			
+
+		<div id="site-info">
+			<!--
+								 
+			-->
+				<!--<a href="http://your-site.com" title="Web design & programing by your credentials" rel="designer">Web development by your credentials</	a> <span class="meta-separator">&bull;</span> -->
+								<!--
+				<span id="site-admin-link"> <a href="http://mvblog.ru/wordpress/wp-login.php">Войти</a></span>
+			-->
+			<div style="font-family: Helvetica, Arial; font-size: 14px; float:left; padding: 0 0 0px 0px;">
+				<a href="http://mvblog.ru/" style="text-decoration: none;">MvBlog.ru</a> | Блог Михаила Выродова | 2013&nbsp;— 2015</div>
+
+		<!-- Yandex.Metrika -->
+			<div style="float:right; padding: 0 0 0px 2px;">
+				<!-- Yandex.Metrika informer --><a href="https://metrika.yandex.ru/stat/?id=24812882&from=informer" target="_blank" rel="nofollow"><img src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/3_0_FFFFFFFF_F7F8F8FF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:24812882,lang:&#39;ru&#39;});return false}catch(e){}"></a><!-- /Yandex.Metrika informer --><!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter24812882 = new Ya.Metrika({id:24812882, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript>&lt;div&gt;&lt;img src="//mc.yandex.ru/watch/24812882" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;</noscript><!-- /Yandex.Metrika counter -->
+			</div>
+		<!-- /Yandex.Metrika -->
+
+	<!--LiveInternet-->
+		<div style="float:right; padding: 0 2px 0px 0;">
+
+		<!--LiveInternet counter-->
+			<script type="text/javascript">
+				<!--
+				document.write("<a href='http://www.liveinternet.ru/click' "+
+					"target=_blank><img src='//counter.yadro.ru/hit?t14.5;r"+
+					escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+
+					screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+
+					escape(document.URL)+";"+Math.random()+"' alt='' title='LiveInternet: показано число просмотров за 24"+" часа, посетителей за 24 часа и за сегодня' "+"border='0' width='88' height='31'><\/a>")
+				//-->
+			</script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/hit" alt="" title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня" border="0" width="88" height="31"></a>
+		<!--/LiveInternet counter-->
+
+		</div>
+	<!--/LiveInternet-->
+
+
+		</div><!-- #site-info -->
+		<!--
+		<div id="site-generator">
+
+			
+												<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Powered by WordPress<div class="icon-webfont icon-wordpress"></	div></a> 
+			
+		</div>--><!-- #site-generator -->	
+
+			
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<!-- added to the blog footer -->        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'mvblogru';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); 
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        
+<!-- WP SyntaxHighlighter Ver.1.7.3 Begin -->
+<script type="text/javascript" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/shCore.js"></script>
+<script type="text/javascript" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/shAutoloader.js"></script>
+<script type="text/javascript" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/shBrushXml.js"></script>
+<script type="text/javascript">//<![CDATA[
+	SyntaxHighlighter.autoloader(
+	"applescript	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAppleScript.js?ver=3.0"
+	,"as3 actionscript3	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAS3.js?ver=3.0"
+	,"bash shell	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0"
+	,"cf coldfusion	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushColdFusion.js?ver=3.0"
+	,"cpp c	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCpp.js?ver=3.0"
+	,"c# c-sharp csharp	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0"
+	,"css	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCss.js?ver=3.0"
+	,"delphi pas pascal	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDelphi.js?ver=3.0"
+	,"diff patch	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDiff.js?ver=3.0"
+	,"erl erlang	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushErlang.js?ver=3.0"
+	,"groovy	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js?ver=3.0"
+	,"java	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js?ver=3.0"
+	,"jfx javafx	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJavaFX.js?ver=3.0"
+	,"js jscript javascript	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0"
+	,"perl pl	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPerl.js?ver=3.0"
+	,"php	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0"
+	,"plain text	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0"
+	,"ps powershell	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPowerShell.js?ver=3.0"
+	,"py python	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPython.js?ver=3.0"
+	,"rails ror ruby rb	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushRuby.js?ver=3.0"
+	,"sass scss	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSass.js?ver=3.0"
+	,"scala	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushScala.js?ver=3.0"
+	,"sql	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSql.js?ver=3.0"
+	,"vb vbnet	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushVb.js?ver=3.0"
+	,"xml xhtml xslt html	http://mvblog.ru/wordpress/wp-content/plugins/wp-syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0"
+	);
+	SyntaxHighlighter.defaults['auto-links'] = true;
+	SyntaxHighlighter.defaults['quick-code'] = true;
+	SyntaxHighlighter.defaults['title'] = '';
+	SyntaxHighlighter.defaults['class-name'] = 'notranslate';
+	SyntaxHighlighter.defaults['collapse'] = false;
+	SyntaxHighlighter.defaults['first-line'] = 1;
+	SyntaxHighlighter.defaults['gutter'] = true;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['smart-tabs'] = true;
+	SyntaxHighlighter.defaults['tab-size'] = 4;
+	SyntaxHighlighter.defaults['toolbar'] = true;
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = "Can't find brush for: ";
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = "Brush wasn't configured for html-script option: ";
+	SyntaxHighlighter.all();
+	
+//]]></script>
+<!-- WP SyntaxHighlighter Ver.1.7.3 End -->
+<script type="text/javascript" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/navigation.js"></script>
+
+	<script src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/jquery.min.js"></script>
+	<script src="./Изменение цвета в консоли (Си, Си++) _ MvBlog_files/button.js"></script>
+	<div id="top-link" style="padding-bottom: 653px; display: block; padding-right: 44.5px;">
+		<a href="http://mvblog.ru/archives/144#top"></a>
+	</div>
+
+
+
+<!-- Dynamic page generated in 1.573 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-06-25 01:03:54 -->
+
+<!-- super cache --></body></html>

@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	int a;
+	cout << "Enter number\n";
+	cin >> a;
+	if ( a % 2 ==  0)
+	{
+		cout << "Chetnoe\n";
+	}
+	else cout << "Ne Chetnoe\n";
+}

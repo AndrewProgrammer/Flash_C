@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+void main()
+{
+	int sizeOfArray = 10;
+	int *p = (int*)malloc(sizeOfArray * sizeof (int));
+	for (int i = 0; i < sizeOfArray; i++)
+	{
+		p[i] = i + 1;
+		cout << p[i] << endl;
+	}
+	free(p);
+	cout << endl << endl;
+	cout << "calloc test: " << endl;
+	p = (int*)calloc(sizeOfArray, sizeof (int));
+	for (int i = 0; i < sizeOfArray; i++)
+	{
+		cout << p[i] << endl;
+	}
+	free(p);
+	cout << endl << endl;
+	cout << "realloc test: " << endl;
+	p = (int*)malloc(sizeOfArray * sizeof (int));
+	for (int i = 0; i < sizeOfArray; i++)
+	{
+		p[i] = i + 1;
+		cout << p[i] << endl;
+	}
+	p = (int*)realloc(p, (sizeOfArray += 2) * sizeof (int));
+	p[sizeOfArray - 1] = 300;
+	cout << "After realloc: " << endl;
+	for (int i = 0; i < sizeOfArray; i++)
+	{
+		cout << p[i] << endl;
+	}
+	free(p);
+	system("pause");
+}

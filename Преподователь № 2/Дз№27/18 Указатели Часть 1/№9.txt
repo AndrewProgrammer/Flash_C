@@ -1,0 +1,40 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+void PrintArray(int *mas, int size)
+{
+	cout << "Massiv of elements: " << endl;
+	for (int i = 0; i < size; i++, mas++)
+	{
+		cout << *mas << " " << endl;
+	}
+}
+void FieldArray(int *mas, int size)
+{
+	for (int i = 0; i < size; i++, mas++)
+	{
+		*mas = rand() % 10 + 1;
+	}
+}
+void Array1(int *mas, int size)
+{
+	int min =*mas;
+	for (int i = 1; i < 10; i++, mas++)
+	{
+		if (*mas < min)
+		{
+			min = *mas;
+		}
+	}
+	cout << "Min number = " << min << endl;
+}
+void main()
+{
+	srand(time(0));
+	int a[10];
+	FieldArray(a, 10);
+	PrintArray(a, 10);
+	cout << endl;
+	Array1(a, 10);
+	system("pause");
+}

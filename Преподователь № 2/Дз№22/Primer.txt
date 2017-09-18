@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+int global_variable = 20; 
+// Создание глобальной переменной. ГП доступна в любой функции программы
+
+void global_var(int gv)
+{
+	gv++;
+
+	global_variable++;
+	cout << global_variable << endl;
+}
+
+void local_var()
+{
+	int global_variable = 15;
+	cout << global_variable;
+}
+
+void replace(int a, int b)
+{
+	cout << a << " " << b << endl; // 20 30
+	int temp = a;
+	a = b;
+	b = temp;
+	cout << a << " " << b << endl; // 30 20 
+}
+
+
+void rectangle(int h=10, int w=20,char s=177,bool e=true)
+{
+	for (int i = 0; i < h; i++)
+	{
+		for (int j = 0; j < w; j++)
+		{
+			if (e)
+			{
+				if (i == 0 || i == h - 1 || j == 0 || j == w - 1)
+				{
+					cout << s;
+				}
+				else
+				{
+					cout << " ";
+				}
+			}
+			else
+				cout << s;
+		}
+		cout << endl;
+	}
+}
+
+
+
+void main()
+{
+	rectangle();
+
+	rectangle(10, 20);
+
+	rectangle(10, 20, 178);
+
+
+
+	
+
+	//int num1 = 20, num2 = 30;
+	//cout << num1 << " " << num2 << endl; // 20 30
+	//replace(num1, num2);
+	//cout << num1 << " " << num2 << endl; // 20 30
+	//
+	/*
+	int a= 20;
+	global_var(a);
+	local_var();*/
+}

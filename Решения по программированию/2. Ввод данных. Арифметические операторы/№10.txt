@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double sum=0, nom, kol;
+	cout << "Vedite nominal 1 kypiry\n";
+	cin >> nom;
+	cout << "Vedite kolichevstvo 1 kypiry\n";
+	cin >> kol;
+	sum += kol * nom;
+	cout << "Vedite nominal 2 kypiry\n";
+	cin >> nom;
+	cout << "Vedite kolichevstvo 2 kypiry\n";
+	cin >> kol;
+	sum += kol * nom;
+	cout << "Vedite nominal 3 kypiry\n";
+	cin >> nom;
+	cout << "Vedite kolichevstvo 3 kypiry\n";
+	cin >> kol;
+	sum += kol * nom;
+	cout << "Vasha Symma kypir kotorie vi veli:" << sum ;
+}

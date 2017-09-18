@@ -1,0 +1,12 @@
+#include <iostream>
+#include <Windows.h>
+using namespace std;
+void main()
+{
+	int color_text = 0, color_fon = 0;
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleCursorPosition(h, { 2, 3 });
+	SetConsoleTextAttribute(h,1516+3);
+	cout    endl;
+}
+

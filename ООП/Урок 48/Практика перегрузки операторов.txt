@@ -1,0 +1,14 @@
+class Int
+{
+public:
+	(explicit) Int(int value)(1 решение, будет вызываться integer)(2 тут исправляем)
+	(explicit) operator int()const;(2 решение, будет вызываться наш Int)(ПЕРВЫМ ДЕЛОМ explicit у оператора)
+};
+Int operator +(Int left,Int right);
+3 - способ написать оператор вот такой: Int operator +(Int left, int right);(Исправляем тут)
+Либо Int operator +(int left,Int right);
+void main()
+{
+	Int a = 3;
+	Int b = a + 3;//Ошибка в том что у нас есть оператор + и +(как к типу данных integer)
+}

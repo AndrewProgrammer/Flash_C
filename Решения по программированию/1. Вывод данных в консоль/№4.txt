@@ -1,0 +1,6 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	cout << "The man in red was \"old freind\" of John..." << endl;
+}

@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	cout << "Vce cymvoli ASCII\n";
+	int a;
+	cin >> a;
+	cout << (char)a << endl;
+}

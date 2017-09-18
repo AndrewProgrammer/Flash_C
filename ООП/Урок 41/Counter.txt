@@ -1,0 +1,64 @@
+#include <iostream>
+#include <Windows.h>
+using namespace std;
+class Counter
+{
+private:
+	int  step;
+	double min, max;
+	double count;
+public:
+	Counter(int step, double min, double max)
+	{
+		if (step <= 0 || min >= max)
+		{
+			cout << "Error!" << endl;
+		}
+
+			this->step = step;
+			this->min = min;
+			this->max = max;
+			this->count = min;
+	}
+	Counter()
+	{
+		min = 0;
+		max = 100;
+		step = 1;
+		count = 0;
+	}
+	double GetCount()
+	{
+		return count;
+	}
+	void ChangeCount()
+	{
+		if (count + step > max)
+		{
+			count = min;
+		}
+		else
+		{
+			count += step;
+		}
+	}
+	void ShowCount()
+	{
+		cout << count << " ";
+	}
+};
+void main()
+{
+	setlocale(0, "ru");
+	int min, max, step;
+		cin >> min;
+		cin >> max;
+		cin >> step;
+	Counter clock(step,min , max);
+	while (1)
+	{
+		clock.ChangeCount();
+		clock.ShowCount();
+		Sleep(100);
+	}
+}

@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a,b,d = 4.07,t = 20.47 ;
+	cout << "Enter date (Months and number of day)\n";
+	cin >> a;
+	cout << "Enter time (Hours and minutes)\n";
+	cin >> b;
+	if (a == d)
+	{
+		cout << "Correct\n";
+	}
+	else if (b == t)
+	{
+		cout << "Correct\n";
+	}
+	else cout << "Isnt Correct\n";
+}

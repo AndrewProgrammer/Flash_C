@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	int a,a1,a2,a3,a4,d,c;
+	cout << "Enter 4-th number\n";
+	cin >> a;
+	a1 = a / 1000;
+	a2 = a / 100 % 10;
+	a3 = a / 10 % 10;
+	a4 = a % 10;
+	c = (a1 + a3 );
+	d = (a2 - a4);
+	cout << "Sum 1 and 3 numbers:\n" << c << "\ndifference 2 and 4 numbers:\n" << d << endl;
+}

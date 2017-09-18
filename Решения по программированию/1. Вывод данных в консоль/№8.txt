@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	cout << "      ***********" << endl;
+	cout << "     *|       * *" << endl;
+	cout << "    * |      *  *" << endl;
+	cout << "   *  |     *   *" << endl;
+	cout << "  *   |    *    *" << endl;
+	cout << " **********     *" << endl;
+	cout << " *    |   *     *" << endl;
+	cout << " *    |   *     *" << endl;
+	cout << " *    |   *     *" << endl;
+	cout << " *    |   *     *" << endl;
+	cout << " *    |   *     *" << endl;
+	cout << " *    |___*_____*" << endl;
+	cout << " *   /    *    *" << endl;
+	cout << " *  /     *   *" << endl;
+	cout << " * /      *  *" << endl;
+	cout << " */       * *" << endl;
+	cout << " ***********" << endl;
+}

@@ -1,0 +1,31 @@
+1.Создать класс окна
+2.Зарегистрировать класс окна
+3.Создать окно, в нем HWND - первый кондидат на поля класса.
+4.Показать на экран
+5.CALL BACK - лучше сделать отдельный класс Application и в нем будет метод public: void Run() - в котором будет наш CALLBACK
+5.Если переносить это класс то нужно вызываь так: void (Window*p)() = Window::Show;
+Например:
+class Window
+{
+	//Минимум в поля класса
+	static void RegisterWindowClass);//Регистрация, и описание структуры.
+	static map<HWND,Window *> m_map;
+	static TCHAR m_name;
+	Window * w = m_map[hWnd]; // Проверка если он, если нет то не обробатываем код.
+	GetModuleHandle(nullptr);//функция для получения HINSTANCE = HMODULE
+	static WindowPrecidure();
+private:
+	void CreateWindowHandle();//Инкапсулирует окно,вызывает окно с нужными параметрами, и проверяется на показалось на экран или нет.(сюда можно записать RegisterWindow)
+public:
+	Window()
+	{
+		m_map[m_window] = this;
+	}
+	void Show();//Показать окно, передаем HWND и например SW_SHOW.
+}
+void main()
+{	RegisterWindowClass();
+	Window w1,w2;
+	w1.Show();
+	return Application::Run();
+}

@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double r,v,iv;
+	cout << "Enter your weight\n";
+	cin >> v;
+	cout << "Enter your growth\n";
+	cin >> r;
+	iv = r - v;
+	if (iv == 0)
+	{
+		cout << "You have ideal figure\n";
+	}
+	else if (iv > 0)
+	{
+		cout << "You have to lose " << iv << "kg to get ideal weigth" << endl;
+	}
+	else if (iv < 0)
+	{
+		iv = iv * (-1);
+		cout << "You must dial " << iv << "kg to get ideal weigth" << endl;
+	}
+}

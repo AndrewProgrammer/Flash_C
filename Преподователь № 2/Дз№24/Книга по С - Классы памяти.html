@@ -1,0 +1,722 @@
+
+<!-- saved from url=(0057)http://www.helloworld.ru/texts/comp/lang/c/c2/book007.htm -->
+<html g_init="6810"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Книга по С - Классы памяти</title>
+
+
+<meta name="KeyWords" content="Стандартные подпрограммы, операторы, printf, scanf, while, функции, структуры, указатели, циклы, for, ДО, ПОКА, символы, препроцессор, процессор, работа с файлами ">
+<meta name="Robots" content="all">
+<meta name="Description" content="WWW.HELLOWORLD.RU : Книга по С - Классы памяти">
+<meta name="Document-state" content="Static">
+<link rel="STYLESHEET" type="text/css" href="./Книга по С - Классы памяти_files/elib.css">
+
+</head>
+
+<body bgcolor="white" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+<script language="JavaScript" src="./Книга по С - Классы памяти_files/vstavka.txt"></script>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="145">
+
+<tbody><tr>
+
+<td style="background: url(&#39;http://helloworld.ru/img/bg_1.gif&#39;) repeat-x left top;" valign="top">
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="30">
+
+<tbody><tr>
+
+<td background="./Книга по С - Классы памяти_files/bg_2.gif" width="50" align="right" valign="top">
+
+<a href="http://helloworld.ru/"><img src="./Книга по С - Классы памяти_files/home.gif" width="23" height="26" border="0" alt="Перейти на главную"></a>&nbsp;&nbsp;&nbsp;</td>
+
+<td background="./Книга по С - Классы памяти_files/bg_2.gif" width="143">
+
+<table border="0" cellpadding="0" cellspacing="0" width="143" height="30">
+
+<tbody><tr>
+
+<td background="./Книга по С - Классы памяти_files/bg_3.gif" width="134"> </td>
+
+<td width="9"> </td>
+
+</tr>
+
+</tbody></table></td>
+
+<td width="10"> </td>
+
+<td background="./Книга по С - Классы памяти_files/bg_4.gif">&nbsp;</td>
+
+<td width="325" align="center">
+
+helloworld.ru - документация и книги по программированию</td>
+
+<td background="./Книга по С - Классы памяти_files/bg_4.gif" width="12">&nbsp;</td>
+
+<td width="10"> </td>
+
+</tr>
+
+</tbody></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="85">
+
+<tbody><tr>
+
+<td width="260" height="85" align="center">
+
+<img src="./Книга по С - Классы памяти_files/logo.gif" width="240" height="47" alt="helloworld.ru - документация и книги по программированию">
+
+</td>
+
+<td align="right">
+
+<iframe src="./Книга по С - Классы памяти_files/erle.html" frameborder="0" vspace="0" hspace="0" width="468" height="60" marginwidth="0" marginheight="0" scrolling="no">
+
+&lt;a href='http://www.linkexchange.ru/users/13055/goto.map' target='_top'&gt; &lt;img ismap src='http://www.linkexchange.ru/cgi-bin/rle.cgi?13055' alt='RLE Banner Network' border='0' height='60' width='468'&gt;&lt;/a&gt;
+
+</iframe>&nbsp;&nbsp;&nbsp;</td>
+
+</tr>
+
+</tbody></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="30">
+
+<tbody><tr>
+
+<td>
+
+&nbsp;&nbsp;&nbsp; <a href="http://helloworld.ru/" class="top"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">главная</a>
+
+&nbsp;&nbsp;&nbsp; <a href="http://hosthost.biz/" class="top"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">хостинг</a>
+
+&nbsp;&nbsp;&nbsp; 
+
+<script language="JavaScript">
+
+        var at=' ';
+
+        at += '<a hr';
+
+        at += 'ef="mailto:webmaster';
+
+        at += '@hell';
+
+        at += 'oworld.ru" class="top">';
+
+        at += '<img src="http://helloworld.ru/img/str.gif" width="15" height="8" border="0">контакты</a></a>';
+
+        document.write(at);
+
+        </script> <a href="mailto:webmaster@helloworld.ru" class="top"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">контакты</a>
+
+</td>
+
+<td align="right">
+
+<table border="0" cellpadding="0" cellspacing="0">
+
+<tbody><tr>
+
+<td>
+
+Поиск по сайту: &nbsp;</td>
+
+<form action="http://helloworld.ru/cgi-bin/search.pl" method="GET"></form>
+
+<td>
+
+<input type="Text" style="width:200px;" name="query">
+
+<input type="Hidden" name="stpos" value="0">
+
+</td><td valign="top">
+
+<input type="image" src="./Книга по С - Классы памяти_files/search.gif" width="16" height="20"></td>
+
+<td width="10"> </td>
+
+
+
+</tr>
+
+</tbody></table></td>
+
+</tr>
+
+</tbody></table></td>
+
+</tr>
+
+</tbody></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+<tbody><tr>
+
+<td width="192" bgcolor="#F8F8F8" valign="top">
+
+<table border="0" cellpadding="0" cellspacing="0" width="192">
+
+<tbody><tr>
+
+<td height="10"> </td>
+
+</tr>
+
+<tr>
+
+<td height="24" background="./Книга по С - Классы памяти_files/bg_5.gif" class="wh">
+
+<img src="./Книга по С - Классы памяти_files/str_2.gif" width="40" height="16" align="absmiddle"><b>Смотрите также</b>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">
+
+
+
+<nobr><a href="http://helloworld.ru/show.php?curraz=1&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0"><b>Языки программирования</b></a></nobr><br>
+
+<a href="http://helloworld.ru/show.php?curraz=39&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">C#</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=22&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">MS Visual C++</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=24&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Borland C++</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=23&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">C++ Builder</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=26&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Visual Basic</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=27&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Quick Basic</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=30&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Turbo Pascal</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=25&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Delphi</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=33&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">JavaScript</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=34&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Java</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=28&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">PHP</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=29&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Perl</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=31&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Assembler</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=35&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">AutoLisp</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=32&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Fortran</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=36&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Python</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=67&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">1C</a><br>
+
+<br><nobr><a href="http://helloworld.ru/show.php?curraz=2&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0"><b>Интернет-технологии</b></a></nobr><br>
+
+<a href="http://helloworld.ru/show.php?curraz=37&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">HTML</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=38&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">VRML</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=49&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">HTTP</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=41&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">CGI</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=51&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">FTP</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=52&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Proxy</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=53&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">DNS</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=50&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">протоколы TCP/IP</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=65&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Apache</a><br>
+
+<br><nobr><a href="http://helloworld.ru/show.php?curraz=4&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0"><b>Web-дизайн</b></a></nobr><br>
+
+<a href="http://helloworld.ru/show.php?curraz=37&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">HTML</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=40&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Дизайн</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=38&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">VRML</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=42&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">PhotoShop</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=43&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Cookie</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=41&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">CGI</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=44&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">SSI</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=45&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">CSS</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=46&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">ASP</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=28&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">PHP</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=29&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Perl</a><br>
+
+<br><nobr><a href="http://helloworld.ru/show.php?curraz=5&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0"><b>Программирование игр</b></a></nobr><br>
+
+<a href="http://helloworld.ru/show.php?curraz=54&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">DirectDraw</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=56&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">DirectSound</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=55&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Direct3D</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=57&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">OpenGL</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=58&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">3D-графика</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=59&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Графика под DOS</a><br>
+
+<br><nobr><a href="http://helloworld.ru/show.php?curraz=6&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0"><b>Алгоритмы</b></a></nobr><br>
+
+<a href="http://helloworld.ru/show.php?curraz=60&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Численные методы</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=62&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Обработка данных</a><br>
+
+<br><nobr><a href="http://helloworld.ru/show.php?curraz=7&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0"><b>Системное программирование</b></a></nobr><br>
+
+<a href="http://helloworld.ru/show.php?curraz=61&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">Драйверы</a><br>
+
+<br><nobr><a href="http://helloworld.ru/show.php?curraz=10&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0"><b>Базы данных</b></a></nobr><br>
+
+<a href="http://helloworld.ru/show.php?curraz=64&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">MySQL</a><br>
+
+<a href="http://helloworld.ru/show.php?curraz=66&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0">SQL</a><br>
+
+<br><nobr><a href="http://helloworld.ru/show.php?curraz=8&prev=0"><img src="./Книга по С - Классы памяти_files/str.gif" width="15" height="8" border="0"><b>Другое</b></a></nobr><br>
+
+<br>
+
+
+
+
+<br>
+
+
+
+</td>
+
+</tr>
+
+<tr>
+
+<td height="24" background="./Книга по С - Классы памяти_files/bg_5.gif" class="wh">
+
+<img src="./Книга по С - Классы памяти_files/str_2.gif" width="40" height="16" align="absmiddle"><b>Друзья</b>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">
+
+
+
+<a href="http://demaker.ru/" alt="Как делать дизайн?">demaker.ru</a>
+
+
+
+<br>
+
+
+
+</td>
+
+</tr>
+
+<tr>
+
+<td height="24" background="./Книга по С - Классы памяти_files/bg_5.gif" class="wh">
+
+<img src="./Книга по С - Классы памяти_files/str_2.gif" width="40" height="16" align="absmiddle"><b>Реклама</b>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="padding:10px;">
+
+
+
+
+
+<br><center>
+
+<!-- HOSTHOST.BIZ 100x100 --><a href="http://www.hosthost.biz/" target="_blank"><img src="./Книга по С - Классы памяти_files/100.gif" width="100" height="100" alt="Лучший хостинг. Аренда серверов" border="0"></a><!-- /hosthost.biz 100x100 -->
+
+<br><br>
+
+<div id="teaser_3"><table id="teaser_block_table_3"><tbody><tr><td id="teaser_block_td"><div id="teaser_block_div"><a href="http://ad.pbe.ru/click.php?teaser_id=2&hash=dabf2c04ef3f0c69a9ef7066ec8d7f88" target="_blank" title="Проверенный хостинг"><img id="teaser_block_img" src="./Книга по С - Классы памяти_files/3-2-abe.gif"></a><br><a href="http://ad.pbe.ru/click.php?teaser_id=2&hash=dabf2c04ef3f0c69a9ef7066ec8d7f88" target="_blank" title="Проверенный хостинг">Проверенный хостинг</a></div></td></tr></tbody></table><style>#teaser_block_table_3{font-family: inherit; width: 0px; border-collapse: separate !important; border-spacing: 0px; border: 0px solid #ffffff; background-color: #ffffff;} #teaser_block_table_3 #teaser_block_header{text-align: left !important; padding: 0.3em 0.5em !important; background: #F8F8F8;} #teaser_block_table_3 #teaser_block_td{border: nonepx  solid; text-align: center !important; vertical-align: top !important; width: 100%; background: #F8F8F8; padding: 0px !important;} #teaser_block_table_3 #teaser_block_div a{color: #0092c8 !important; font-size: inherit !important;} #teaser_block_table_3 #teaser_block_div a:hover{color: #0092c8 !important;} #teaser_block_table_3 #teaser_block_div #teaser_block_img{width: 100px; height: 100px; border: 0px solid #ffffff; margin: 0 0 0 0;} #teaser_block_table_3 #teaser_block_partner_lnk{text-align: right; padding: inherit;} #teaser_block_table_3 #teaser_block_partner_lnk a{color: inherit !important;} #teaser_block_table_3 #teaser_block_partner_lnk a:hover{color: inherit !important;}</style></div>
+<script type="text/javascript">document.write('<scr'+'ipt type="text/jav'+'ascript" src="http://ad.pbe.ru/show/?block_id=3&r='+escape(document.referrer)+'&'+Math.round(Math.random()*100000)+'"></scr'+'ipt>');</script><script type="text/javascript" src="./Книга по С - Классы памяти_files/saved_resource"></script>
+
+
+<br><br>
+
+<table width="95%" cellpadding="5" cellspacing="1" border="0" bgcolor="#D5EFFF"><tbody><tr bgcolor="#F8F8F8"><td align="center">
+
+</td></tr></tbody></table>
+
+<br>
+
+
+</center>
+
+
+</td>
+
+</tr>
+
+</tbody></table></td>
+
+<td width="1" bgcolor="#E4E4E4"> </td>
+
+<td style="padding:10px; background: url(&#39;http://helloworld.ru/img/bg_7.gif&#39;) no-repeat right bottom;" valign="top">
+
+
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+
+<tbody><tr>
+
+<td style="border: 1px solid #E4E4E4;" bgcolor="#F2F2F2">
+
+<a href="http://helloworld.ru/">helloworld.ru</a>
+
+</td>
+
+</tr>
+
+</tbody></table>
+
+
+
+<center><h2>Классы памяти</h2></center>
+
+<center><table><tbody><tr><td width="612">
+Все переменные в программе характеризуются не
+    только типом, но и классом памяти. В языке Си
+    существует четыре класса памяти: автоматический <strong>(automatic)</strong>,
+    регистровый<strong>(register)</strong>, статический<strong>(static)</strong>
+    и внешний<strong>(external). </strong><p></p>
+    <p align="left"><font face="Times New Roman" color="#000000"><strong>Автоматические
+    </strong>переменные в программе можно описать так: </font></p>
+    <p align="left"><font face="Times New Roman" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>auto A; auto char c1; auto int x= 125; </strong></font></p>
+    <p align="left"><font face="Times New Roman" color="#000000">Если мы этим не
+    пользовались, то только потому что опущенный
+    описатель <strong>&nbsp;&nbsp;&nbsp;&nbsp; auto</strong> используется
+    по умолчанию. Зона действия автоматической
+    переменной ограничена блоком или функцией, где
+    она описана. Она начинает существовать после
+    обращения к функции и исчезает после выхода из
+    нее. Таким образом автоматические переменные не
+    занимают область в памяти. Значение
+    автоматической переменной не может быть
+    изменено другими функциями и в этих функциях
+    может находится переменные с таким же именем.
+    Проанализируем результаты работы следующей
+    программы.</font></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Пимер 2.3</p>
+    <div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="53%">
+      <tbody><tr>
+        <td width="100%"><strong>#include &lt;stdio.h&gt;<br>
+        main()<br>
+        {<br>
+        int t;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int t=2;<br>
+        {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int t=3;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("%d\n",t);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("%d\n",t);<br>
+        }<br>
+        &nbsp;&nbsp; printf("%d\n",t);<br>
+        <br>
+        }</strong></td>
+      </tr>
+    </tbody></table>
+    </center></div><p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    В этой программе перменная <strong>t</strong> описана в
+    нескольких блоках, в каждом блоке она может
+    принимать разные значения не зависимо от других.
+    С ней могут выполнятся разные операции. В нашей
+    програамме значение переменной&nbsp;&nbsp; <strong>t </strong>выводится
+    на дисплей. В нашем случае выведятся числа <strong>2,
+    3, 746</strong>. Число <strong>746</strong> - так называемое число
+    "мусор" оно такое так как ей не присваивали
+    значение в первом блоке. </p>
+    <p align="left"><strong>Внешние</strong> переменные вводятся
+    &nbsp; как нечто противоположное автоматическим.
+    Это <strong>глобальные </strong>переменные и к ним можно
+    обращаться именами из любой функции. Поскольку
+    внешеие переменные доступны везде, их можно
+    использовать для связи между функциями, не
+    пренебрегая механизму формальных параметров. </p>
+    <p align="left">&nbsp;&nbsp; Пример 2.4</p>
+    <div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="70%">
+      <tbody><tr>
+        <td width="100%"><strong><br>
+        #include &lt;stdio.h&gt;<br>
+        int x=145;/*Описание внешней переменной*/<br>
+        main()<br>
+        {<br>
+        extern int x,y;<br>
+        &nbsp;&nbsp; printf("x=%d y=%d \n",x,y);<br>
+        }<br>
+        int y=541; /*Описание внешней переменной*/<br>
+        </strong></td>
+      </tr>
+    </tbody></table>
+    </center></div><p align="left"><font face="Times New Roman">&nbsp; Внешнии
+    переменные могут определятся вне квкой-либо
+    функции; при этом</font> выделяется фактическая
+    память. В любой другой функции, обращающейся к
+    этим переменным, они должны описываться;
+    делается явно с помощью описателя <strong>extern</strong>.
+    Обычно поступают так, как показано на прмере 2.5.
+    Все внешние переменные размещают в начале
+    исходного модуля (вне всяких функций!), опуская
+    дополнительные описания со словом extern внутри
+    функций. Конечно, если внешняя переменная и
+    функция, которая ее использует, размещены в
+    разных файлах, описывать эту переменную в
+    функции необходиммо. Но самым важным способом
+    является описание каждой внешней перемнной с
+    ключевого слова extern в любой функции, которая ее
+    использует. А еще лучше избегать применения
+    внешних переменных, так как они часто служат
+    источником труднообнаруживаемых ошибок. </p>
+    <p align="left">Пример 2.5</p>
+    <div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="60%">
+      <tbody><tr>
+        <td width="100%"><strong>int x=3; /*описание внешней переменной
+        */<br>
+        /* увелечение x */<br>
+        int plus1()<br>
+        {<br>
+        &nbsp;&nbsp; x=x+1;<br>
+        &nbsp;&nbsp; printf("прибавляем единицу: x=%d\n",x);<br>
+        }<br>
+        /*уменьшение x */<br>
+        int mainus1()<br>
+        {<br>
+        x=x-1;<br>
+        printf("вычитаем единицу: x=%d\n",x);<br>
+        }<br>
+        main()<br>
+        {<br>
+        &nbsp; printf("начальное значение x=%d\n",x);<br>
+        &nbsp; plus1();<br>
+        &nbsp; minus1();<br>
+        &nbsp; minus1();<br>
+        &nbsp; printf("конечное значение x=%d \n", x);<br>
+        }</strong></td>
+      </tr>
+    </tbody></table>
+    </center></div><p align="left"><font face="Times New Roman" color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>Статические </strong>переменные, подобно
+    автоматическим, локальны в той функции или блоке,
+    где они описаны. Разница заключается в том, что
+    статические переменные не исчезают, когда
+    функция (блок)</font><small><font face="Arial" color="#804040"><strong> </strong></font></small><font face="Times New Roman" color="#000000">завершает работу, и их
+    значения сохраняются для последующих вызовов
+    функции. Описание статических переменных
+    выглядит так:</font></p>
+    <p align="center"><font face="Times New Roman" color="#000000">&nbsp;&nbsp; <strong>static
+    char c; static int a=1;</strong></font></p>
+    <p align="left"><font face="Times New Roman" color="#000000">Рассмотрим
+    пример 2.6, в котором переменная объявлена как
+    статическая.</font></p>
+    <p>&nbsp; Пример 2.6</p>
+    <div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="44%">
+      <tbody><tr>
+        <td width="100%"><strong>*статические переменные*/<br>
+        #include &lt;stdio.h&gt;<br>
+        plus1() <br>
+        {<br>
+        static int x=0;<br>
+        x=x+1;<br>
+        printf("x=%d\n",x);<br>
+        }<br>
+        &nbsp; main()<br>
+        {<br>
+        plus1();<br>
+        plus1(); <br>
+        plus1();<br>
+        }</strong></td>
+      </tr>
+    </tbody></table>
+    </center></div><p align="left"><font face="Times New Roman" color="#000000">&nbsp;&nbsp;&nbsp;
+    Начальное значение равное нулю присваивает
+    переменной x только один раз. Затем в программе
+    main, функция <strong>plus1() </strong>несколько раз
+    запускается, так как при каждом запуске функции
+    аргумент x не изменяется, а оставляет значение из
+    предыдущей функции. Таким образом повторение
+    функции<strong> plus1 </strong>обеспечивает увелечение
+    переменной x на 1 при каждом запуске 1, 2, 3 ...</font></p>
+    <p align="left"><font face="Times New Roman" color="#000000"><strong>Регистровые
+    </strong>переменные объявляются в программе с
+    помощью ключевого слова <strong>register</strong> и по
+    замыслу автора языка Си должны хранится в сверх
+    быстрой памяти ЭВМ - регистрах. Используются
+    аналогично автоматическим переменным.
+    Целесообразность их применения для увелечения
+    быстродействия программы представляется в
+    большинстве случаев сомнительной.</font></p>
+
+</td></tr></tbody></table></center>
+<br>
+<center>[<a href="http://www.helloworld.ru/texts/comp/lang/c/c2/book006.htm"> Назад</a> | <a href="http://www.helloworld.ru/texts/comp/lang/c/c2/visual_d.htm">Оглавление</a> | <a href="http://www.helloworld.ru/texts/comp/lang/c/c2/book008.htm">Далее </a>]</center>
+<br><br><br><br><br><br><br><br><br>
+<center>
+
+</center>
+
+</td>
+</tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="50">
+<tbody><tr>
+<td width="193" background="./Книга по С - Классы памяти_files/bg_6.gif" rowspan="2" class="wh" align="center">
+
+helloworld.ru © 2001-2014<br>
+Все права защищены
+
+</td>
+<td height="1" bgcolor="#E4E4E4"> </td>
+</tr>
+<tr>
+<td height="49" bgcolor="#F8F8F8" align="right">
+
+<noindex>
+<!--begin of Top100-->
+
+<a href="http://top100.rambler.ru/top100/">
+
+<img src="./Книга по С - Классы памяти_files/top100.cnt" alt="Rambler&#39;s Top100" width="1" height="1" border="0"></a>
+
+<!--end of Top100 code-->
+
+
+
+<!-- HotLog -->
+
+<script language="javascript">
+
+hotlog_js="1.0";
+
+hotlog_r=""+Math.random()+"&s=7004&im=102&r="+escape(document.referrer)+"&pg="+
+
+escape(window.location.href);
+
+document.cookie="hotlog=1; path=/"; hotlog_r+="&c="+(document.cookie?"Y":"N");
+
+</script><script language="javascript1.1">
+
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+
+<script language="javascript1.2">
+
+hotlog_js="1.2";
+
+hotlog_r+="&wh="+screen.width+'x'+screen.height+"&px="+
+
+(((navigator.appName.substring(0,3)=="Mic"))?
+
+screen.colorDepth:screen.pixelDepth)</script>
+
+<script language="javascript1.3">hotlog_js="1.3"</script>
+
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+
+document.write("<a href='http://click.hotlog.ru/?7004' target='_top'><img "+
+
+" src='http://hit1.hotlog.ru/cgi-bin/hotlog/count?"+
+
+hotlog_r+"&' border=0 width=88 height=31 alt=HotLog></a>")</script><a href="http://click.hotlog.ru/?7004" target="_top"><img src="./Книга по С - Классы памяти_files/count" border="0" width="88" height="31" alt="HotLog"></a>
+
+<noscript>&lt;a href=http://click.hotlog.ru/?7004 target=_top&gt;&lt;img
+
+src="http://hit1.hotlog.ru/cgi-bin/hotlog/count?s=7004&amp;im=102" border=0 
+
+width="88" height="31" alt="HotLog"&gt;&lt;/a&gt;</noscript>
+
+<!-- /HotLog -->
+
+
+
+
+
+<!--TopList COUNTER--><a target="_top" href="http://top.list.ru/jump?from=154111"><img src="./Книга по С - Классы памяти_files/counter" border="0" height="31" width="88" alt="TopList"></a><!--TopList COUNTER-->
+
+
+
+<!--LiveInternet counter--><script language="JavaScript"><!--
+
+document.write('<a href="http://www.liveinternet.ru/click" '+
+
+'target=_blank><img src="http://counter.yadro.ru/hit?t39.6;r'+
+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+
+screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+
+';'+Math.random()+
+
+'" border=0 width=31 height=31 title="liveinternet.ru"></a>')//--></script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="./Книга по С - Классы памяти_files/hit" border="0" width="31" height="31" title="liveinternet.ru"></a><!--/LiveInternet-->
+
+
+
+<script type="text/javascript" src="./Книга по С - Классы памяти_files/js.php"></script>
+
+<!--begin of Top100 logo-->
+
+<a href="http://top100.rambler.ru/top100/">
+
+<img src="./Книга по С - Классы памяти_files/w0.gif" alt="Rambler&#39;s Top100" width="88" height="31" border="0"></a>
+
+<!--end of Top100 logo -->
+
+
+
+<!-- Begin ProtoPlex TOP-100 --><a href="http://protoplex.ru/cgi-bin/catalog.pl?showid=10663"><script language="JavaScript">var d;d=document;d.write('<img src=http://protoplex.ru/images/rating/knopa11.png alt="ProtoPlex TOP-100: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!" width=88 height=31 border=0>');</script><img src="./Книга по С - Классы памяти_files/knopa11.png" alt="ProtoPlex TOP-100: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!" width="88" height="31" border="0"></a><!-- End ProtoPlex TOP-100 -->
+
+</noindex>
+
+
+
+&nbsp;
+
+
+
+
+
+ 
+
+</td>
+</tr>
+</tbody></table>
+
+ 
+
+
+<iframe src="./Книга по С - Классы памяти_files/index.html" style="display: none;"></iframe></body></html>

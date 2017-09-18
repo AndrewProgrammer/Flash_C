@@ -1,0 +1,91 @@
+template<typename Prevd>
+void remove_if(Pred p)
+bool RemoveRange(int x)
+{
+	return x >= 3 && x<= 5; 
+}
+void main()
+{
+	vector<int>v;
+	v.remove_if(RemoveRange);
+}
+//Стало 
+template<typename Prevd>
+void remove_if(Pred p)
+class RangeRemover
+{
+private:
+	int lower,upper;
+public:
+	RangeRemover(int l,int u):lower(l),upper(u){}
+	bool operator()(int x)
+	{
+		return x>=lower&&xM=upper;
+	}
+};
+void main()
+{
+	vector<int>v;
+	v.remove_if(RemoveRange(3,5));
+}
+------------------------------
+template<typename Prev>
+void remove_if(Pred p)
+template <typename BinaryPred>
+//Методы вектора
+void unique(BinaryPred p);
+vpod merge(list<T>& x);
+template <typename Comp>
+void merge(list<T>& x, Comp c);//Сливает два списка в один, то есть(есть у нас наш список из 135, а сливаем с 246, а на выходе получаем 123456)
+void sort();//Сортирует наш список по возрастанию
+bool CompareByAge(const Student & s1, const Student & s2)
+{
+	return s1.GetAge() < s2.GetAge();
+}
+void sort(Comp c);//Работает с функцией которая выше
+void reverse();реверсирует сортировку по убыванию.
+bool CheckUnique(double a,double b)//Задаем точность(насколько числа уникальные)
+{
+	return (int) a == (int) b;
+
+}
+-----------------------------------------
+Контейнер <map>//Асоциативный массив либо карта,не позволяет хранить дубликаты ключей
+#include <map>
+map<string, int> m;//Первый параметр ключ, а второй параметр значение
+//Например:
+//map<string,Color*> m;
+//map["red"] = new Color(...);
+template<typename Comp>
+explicit map(Comp <= key_compare());//Сравнение меньше, если есть operator значения меньше,true если первый параметр меньше второго
+//Добавления элементов в map
+//1 вариант
+m["red"] = 7;//Если у нас была пара с ключем red то перезапишется на 7, если пары red не было то она добавится
+cout << m["red"] << endl;//Вывод на экран ключа
+//2 вариант
+auto res = m.insert(pair<string,int>("red",7));//Тип данных pair должны быть такие же что принимаем,возвращается тип данных pait<iterator,bool>
+//Проверка if(res.second)
+map<string,int>::iterator b = m.begin();
+map<string,int>::iterator e = m.end();
+iterator find(TKey key)//Существует пара наша или нет
+begin()//Начало
+cbegin()//начало const
+crbegin()//мы обходим в обратном порядке и с const
+rbegin()//мы обходим в обратной порядке
+size_t count(Tkey key)//Сколько пар с таким ключем есть в нашем m.
+while(b != e)
+{
+	//Благодаря этим параметрам: auto res = m.insert(pair<string,int>("red",7));
+	cout <<(*b).first;//Значение ключа текущей пары, то есть то что слева
+	cout << b->second;//Тут будет 7, то есть то что справа
+	++b;
+}
+//Можно также через for
+for(pair<string,int> x:m)
+{
+	cout << x.fisrt;//Выведет нам ключ(то есть "red")
+	cout << x.second;//Вывдете нам значение этого элемента под ключом red
+}
+------------------------------------
+#include <multimap>//Позволяет хранить еще дубликаты
+//Все методы такие же как и в map

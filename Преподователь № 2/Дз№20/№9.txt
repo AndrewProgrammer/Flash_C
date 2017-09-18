@@ -1,0 +1,52 @@
+#include <iostream>
+#include <time.h>
+#include <conio.h>
+#include <stdio.h>
+using namespace std;
+
+void main()
+{
+	const int N = 5;
+	int spiral[N][N];
+	int i, j, shift, temp, num = N*N, dir = 0;
+	for (shift = N; shift > N / 2; shift--)
+	{
+		temp = shift - 1;
+		for (i = temp; i >= dir + 1; i--)
+		{
+			spiral[i][temp] = num;
+			num--;
+		}
+		for (j = temp; j >= dir + 1; j--)
+		{
+			spiral[dir][j] = num;
+			num--;
+		}
+		for (i = dir; i < temp; i++)
+		{
+			spiral[i][dir] = num;
+			num--;
+		}
+		for (j = dir; j < temp; j++)
+		{
+			spiral[temp][j] = num;
+			num--;
+		}
+		dir++;
+	}
+
+	if (N % 2)
+	{
+		spiral[N / 2][N / 2] = num;
+	}
+
+	for (i = 0; i < N; i++)
+	{
+		for (j = 0; j < N; j++)
+		{
+			cout.width(5);
+			cout << spiral[i][j];
+		}
+		cout << endl;
+	}
+}

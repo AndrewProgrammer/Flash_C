@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 10;
+	double a[size] = { 1, 2, 3, 4.56, 5.78, 6, 7, 8, 9.69, 10 };
+	cout << "Массив с рандомными числами: \n";
+	
+	for (int j = 0; j < size; j++)
+	{
+		cout << a[j] << ' ';
+	}
+	int m = 0, n = size - 1;
+	while (m < n)
+	{
+		while (a[m] - (int)a[m]>0)
+			m++;
+		while (a[n] == (int)a[n])
+			n--;
+		if (m < n)
+		{
+			swap(a[m], a[n]);
+			m++; 
+			n--;
+		}
+	}
+	cout << "\nМассив №2: \n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << a[j] << ' ';
+	}
+	cout << endl;
+}

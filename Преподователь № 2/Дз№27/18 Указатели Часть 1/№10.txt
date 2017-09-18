@@ -1,0 +1,61 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+void PrintArray(int *mas, int size)
+{
+	for (int i = 0; i < size; i++, mas++)
+	{
+		cout << *mas << endl;
+	}
+}
+void FieldArray(int *mas, int size)
+{
+	for (int i = 0; i < size; i++, mas++)
+	{
+		*mas = rand() % 10 + 1;
+	}
+}
+void Array1(int *mas, int size)
+{
+	int shift;
+	cout << "¬ведите число сдвига\n";
+	cin >> shift;
+	int b;
+	cout << "≈сли вы ведете 1 то сдвиг массива произойдет в право.≈сли вы не наберете 1 то в противном случае сдвиг произойдет в лево: \n";
+	cin >> b;
+	if (b == 1)
+	{
+		for (int k = 0; k < shift; k++,*mas++)
+		{
+			int temp = mas[size - 1];
+			for (int p = size - 1; p > 0; p--,*mas++)
+			{
+				mas[p] = mas[p - 1];
+			}
+			mas[0] = temp;
+		}
+	}
+	else
+	{
+		for (int k = 0; k < shift; k++,*mas++)
+		{
+			int temp = mas[0];
+			for (int p = 0; p < size - 1; p++,*mas++)
+				mas[p] = mas[p + 1];
+			mas[size - 1] = temp;
+		}
+
+	}
+}
+void main()
+{ 
+	setlocale(0, "ru");
+	srand(time(0));
+	int a[10];
+	int *mas = &a[0];
+	FieldArray(mas, 10);
+	PrintArray(mas, 10);
+	cout << endl;
+	Array1(mas, 10);
+	PrintArray(mas, 10);
+}

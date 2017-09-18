@@ -1,0 +1,8 @@
+int Sum(int a, int b);
+int Divide(int a,int b);
+”казатель на любую функцию с типом данных int - int (*ptv)(int,int);
+int (*ptv) - возращаемое значение функции(int,int) = Sum;
+ptv(1,2);
+ptv = Divide;
+ptv(1,2);
+IndexOf(Human h, bool(*pred)(Human));

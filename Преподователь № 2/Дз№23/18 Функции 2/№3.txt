@@ -1,0 +1,27 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void input_s(char s)
+{
+	for (int i = 0; i < s; i++)
+	{
+		if (s >= '0' && s <= '9')
+		{
+			cout << " ";
+		}
+		else if ((s >= 'a' && s <= 'z') || (s >= 'A' && s <= 'Z'))
+		{
+			system("cls");
+			cout << "Error!\n";
+			exit(0);
+		}
+	}
+}
+void main()
+{
+	char a;
+	cout << "Enter digit: \n";
+	cin >> a;
+	input_s(a);
+}

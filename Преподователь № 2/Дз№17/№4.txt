@@ -1,0 +1,53 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	rand();
+	const int m = 9, size = 2 * m + 1;
+	int b[size], med = 0,pos = 0,min = 0,max = 100;
+	for (int k = 0; k < size; k++)
+	{
+		b[k] = rand() % (max - min + 1) + min;
+	}
+	cout << "Массив с рандомными числами:\n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << b[j] << ' ';
+	}
+	cout << endl;
+	for (int i = 1; i < size; i++)
+	{
+		for (int j = i; j > 0 && b[j] < b[j - 1]; j--)
+		{
+			swap(b[j], b[j - 1]);
+		}
+	}
+	cout << "Отсортированый массив методом вставками:\n";
+	for (int k = 0; k < size; k++)
+	{
+		cout << b[k] << ' ';
+	}
+	int min1 = 0;
+	cout << endl;
+	for (int i = 1; i < size; i++)
+	{
+		if (b[i] < b[min1])
+			min1 = i;
+	}
+	int max1 = 0;
+	cout << endl;
+	for (int i = 1; i < size; i++)
+	{
+		if (b[i] > b[max1])
+			max1 = i;
+	}
+	med = (b[min1] + b[max1]) / 2;
+	cout << "Position of min number = " << min1 << endl;
+	cout << "Min number = " << b[min1] << endl;
+	cout << "Position of max number = " << max1 << endl;
+	cout << "Max number = " << b[max1] << endl;
+	cout << "Mediana = " << med << endl;
+}

@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+double Rounding(double digit, int accuracy)
+{
+	double temp, round;
+	int tens = 1;
+	int tmp, last;
+	for (int i = 1; i <= accuracy; i++)
+	{
+		tens *= 10;                
+	}
+	tmp = digit*tens * 10;           
+	last = tmp % 10;              
+	temp = tmp / 10;              
+	temp = int(temp);                 
+
+	if (last >= 5) temp++;          
+	round = temp / tens;        
+	return round;
+}
+void main()
+{
+	setlocale(0, "ru");
+	int accuracy;
+	double digit;
+	cout << "¬ведите число дл€ округлени€: ";
+	cin >> digit;
+	cout << "¬ведите точность (количество знаков после зап€той): ";
+	cin >> accuracy;
+	cout << "\nќкругленное число " << Rounding(digit, accuracy) << endl;
+}

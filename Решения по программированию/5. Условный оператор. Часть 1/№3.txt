@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a;
+	cout << "Enter number\n";
+	cin >> a;
+	if ( a < 0)
+	{
+		cout << "Number have -\n";
+	}
+	else if (a == 0)
+	{
+		cout << "Number is 0\n";
+	}
+	else cout << "Number have +\n";
+}

@@ -1,0 +1,16 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+void main()
+{
+	int a;
+	cout << "Enter number1: \n";
+	cin >> a;
+	int *ptra = &a;
+	if (*ptra >= 0)
+	{
+		cout << "This number has: +" << endl;
+	}
+	else cout << "This number has: -"<< endl;
+	system("pause");
+}

@@ -1,0 +1,34 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+const int size = 10;
+double averege()
+{
+	int a[size];
+	srand(time(0));
+	rand();
+	int avg, sum = 0;
+	for (int i = 0; i < size; i++)
+	{
+		a[i] = rand() % 101;
+	}
+	cout << "Массив из 10 элементов:\n";
+	for (int i = 0; i < size; i++)
+	{
+		cout << a[i] << " ";
+	}
+	for (int i = 0; i < size; i++)
+	{
+		sum += a[i];
+	}
+	avg = sum / size;
+	cout << endl;
+	cout << "Avg = " << avg << endl;
+	return 0;
+}
+
+void main()
+{
+	setlocale(0, "ru");
+	averege();
+}

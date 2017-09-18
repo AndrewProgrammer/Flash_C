@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+void main()
+{
+	const int n = 10;
+	int a[n], b[n];
+	int i, j;
+	cout << "Enter  10 numbers:\n";
+	for (int k = 0; k < n; k++)
+	{
+		cin >> a[k];
+	}
+	for (i = 0, j = 9; i < 10; i++, j--)
+	{
+		b[i] = a[j];
+	}
+	cout << "Repeating these numbers:\n";
+	for (i = 0; i < 10; i++)
+	{
+		cout << a[i] << " ";
+	}
+	cout << endl;
+	cout << "conversely these numbers:\n";
+	for (i = 0; i < 10; i++)
+	{
+		cout << b[i] << " ";
+	}
+	cout << endl;
+}

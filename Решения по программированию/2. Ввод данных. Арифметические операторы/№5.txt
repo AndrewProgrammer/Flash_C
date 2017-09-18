@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a, b = 21, c;
+	cout << "Vedite symy v grivnax\n";
+	cin >> a;
+	c = a*b;
+	cout << "Vash otvet v dolarax\n" << c << endl;
+}

@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a,b;
+	cout << "Enter 1 number\n";
+	cin >> a;
+	cout << "Enter 2 number\n";
+	cin >> b;
+	if ( a > b)
+	{
+		cout << "Second number is am smallest\n";
+	}
+	else cout << "First number is am smallest\n";
+}

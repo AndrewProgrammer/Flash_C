@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a,b;
+	cout << "Enter 2 koordinates\n";
+	cin >> a >> b;
+	if (a == 0)
+	{
+		cout << "Line || X\n";
+	}
+	else if (b == 0)
+	{
+		cout << "Line || Y\n";
+	}
+	else cout << "Line is not || X or Y\n";
+}

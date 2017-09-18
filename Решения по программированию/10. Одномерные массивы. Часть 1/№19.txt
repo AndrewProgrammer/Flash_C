@@ -1,0 +1,48 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 12;
+	int index = 0, B[size], A[size];
+	int min = -10, max = 10;
+	srand(time(0));
+	rand();
+	for (int k = 0; k < size; k++)
+	{
+		B[k] = rand() % (max - min + 1) + min;
+	}
+	cout << "Массив с рандомными числами: \n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << B[j] << ' ';
+	}
+	for (int c = 0; c < size; c++)
+	{
+		if (B[c] > 0)
+		{
+			A[index++] = B[c];
+		}
+	}
+	for (int c = 0; c < size; c++)
+	{
+		if (B[c] == 0)
+		{
+			A[index++] = B[c];
+		}
+	}
+	for (int c = 0; c < size; c++)
+	{
+		if (B[c] < 0)
+		{
+			A[index++] = B[c];
+		}
+	}
+	cout << endl;
+	cout << "Массив отсортированый: \n";
+	for (int a = 0; a < size; a++)
+	{
+		cout << A[a] << ' ';
+	}
+}

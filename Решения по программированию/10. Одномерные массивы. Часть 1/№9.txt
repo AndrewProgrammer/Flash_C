@@ -1,0 +1,30 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 15;
+	int b[size];
+	int n = 0,c;
+	srand(time(0));
+	rand();
+	for (int k = 0; k < size; k++)
+	{
+		b[k] = rand() % 101;
+	}
+	cout << "Массив с рандомными числами :\n";
+	for (int j = 0; j < 15; j++)
+	{
+		cout << b[j] << ' ';
+	}
+	cout << endl;
+	for (int i = 0; i < size; i++)
+	{
+		if (b[i] / 3)
+		{
+			n += i;
+		}
+	}
+	cout << "Сумма этих элементов в массиве = " << n << endl;
+}

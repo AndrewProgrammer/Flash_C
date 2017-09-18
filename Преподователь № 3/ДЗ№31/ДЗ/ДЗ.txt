@@ -1,0 +1,32 @@
+WM_MOUSEMOVE:
+wParam - отвечают за было ли что то нажато по мимо мышки
+lParam -  y - high, x - low.
+HIWORD(DWORD) // Возращает WORD
+LOWORD(DWORD) //
+GET_X_LPARAM(#include <WindowsX.h>)//Безнаковое число
+GET_Y_LPARAM(#include <WindowsX.h>)//Безнаковое число
+WM_LBUTTONDOWN:
+нажатие левой кнопки
+WM_RBUTTONDOWN:
+нажатие правой кнопки
+WM_MBUTTONDOWN:
+нажатие средней кнопки
+WM_LBUTTONUP:
+отжатие левой кнопки
+WM_RBUTTONUP:
+отжатие правой кнопки
+WM_MBUTTONUP:
+отжатие средней кнопки
+WM_LBUTTONDBLCLK //(нужно подключить CS_DBLCLIKS)
+WM_MOUSEWHEEL //(колесико) wParam(High(хранится 120, и -120 в другую сторону))
+Функции для взаимодействия с заголовком окна: 
+GetWindowText//Посмотреть как устроены
+GetWindowTextLenght//Посмотреть как устроены
+SetWindowText // Тип HWND hWnd //Дескриптор окна, и наш текст "Hello");
+Структура типа POINT - координата // Посмотреть на MSDN
+Структура типа RECT - 4 поля (Left,Right,Top, Bottom) //
+Функция для получения клиентской области окна и размера этого окна:
+Rect r;
+GetWindowRect(wnd,&r); //Получения нашего окна прямо на нашем рабочем столе
+GetClientRect(wnd,& r); //Возвращает клиенсткую область относительно рабочего стола
+Написать: Приложение которое будет подсчитовать сколько раз нажалась мышка

@@ -1,0 +1,451 @@
+#include <iostream>
+#include <math.h>
+#include <time.h>
+
+using namespace std;
+
+void main()
+{
+	srand(time(0));
+
+	// task 1 Создать массив из 20 случайных чисел в диапазоне от -30 до 10. 
+	//Написать программу, определяющую сумму элементов массива, находящихся в массиве 
+	//до первого положительного элемента.
+
+	/*const int size = 20;
+	int arr[size];
+	int sum = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+	arr[i] = rand() % 40 - 30;
+	cout << arr[i] << "\t";
+	}
+
+	for (int i = 0; arr[i] < 0; i++)
+	{
+	sum+=arr[i];
+	}
+	cout << "The sum of elements before first positive = " << sum << endl;*/
+
+
+	// task 2 Создать массив из 20 случайных чисел. 
+	// Определить минимальный и максимальный элемент массива (вывести значение и порядковый номер).
+
+
+	/*const int size = 20;
+	int arr[size];
+	int max = 0, min =0;
+
+	for (int i = 0; i < size; i++)
+	{
+	arr[i] = rand();
+	cout << arr[i] << "\t";
+	}
+
+	max = arr[0];
+	min = arr[0];
+
+	for (int i = 1; i < size; i++)
+	{
+	if (arr[i]>max)
+	max = arr [i];
+	if (arr[i]<min)
+	min = arr [i];
+	}
+
+	cout << "Minimal element = " << min << endl;
+	cout << "Maximum element = " << max << endl;*/
+
+
+	// task 3 Ввести массив из 10 вещественных чисел. Определить, сколько элементов массива не имеют дробной части.
+
+	/*const int size = 10;
+	float arr[size];
+	int counter = 0;
+
+	cout << "Enter 10 real numbers: " << endl;
+
+	for (int i = 0; i < 10; i++)
+	{
+	cin >> arr[i];
+	}
+	system("cls");
+
+	for (int i = 0; i < 10; i++)
+	{
+	if ((arr[i]-int(arr[i]))==0)
+	counter++;
+	}
+
+	cout << "Your array contain " << counter << " elements without fraction." << endl;*/
+
+
+	// task 4 Создать массив из 20 случайных чисел в диапазоне от 0 до 200. 
+	//Определить количество одноразрядных, двухразрядных и трёхразрядных чисел в процентном отношении.
+
+	/*const int size = 20;
+	int arr[size] = { 0 };
+	int one=0, two=0, three=0;
+
+	for (int i = 0; i < size; i++)
+	{
+	arr[i] = rand() % 201;
+	cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+	for (int i = 0; i < size; i++)
+	{
+	if (arr[i] / 100>0)
+	three++;
+	else if (arr[i] / 10 > 0)
+	two++;
+	else
+	one++;
+	}
+	cout << "One - " << one * 5 << "%" << endl;
+	cout << "Two - " << two * 5 << "%" << endl;
+	cout << "Three - " << three * 5 << "%" << endl;*/
+
+
+	// task 5  Создать массив из 20 целых случайных чисел в диапазоне от 0 до 100. 
+	// Определить и вывести на экран все простые числа из этого массива.
+
+
+	/*const int size = 20;
+	int arr[size];
+	int simple_arr[25]={2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+
+	for (int i = 0; i < size; i++)
+	{
+	arr[i] = rand() % 101;
+	cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+	for (int i = 0; i < size; i++)
+	{
+	for (int j = 0; j < 25; j++)
+	{
+	if (arr[i]==simple_arr[j])
+	cout << arr[i] << "\t";
+	}
+	}*/
+
+
+	// task 6 Создать массив из 10 целых случайных чисел. 
+	// Изменить порядок следования элементов массива на противоположный 
+	// (1-й элемент меняется с 10-м, 2-й элемент с 9-м и т.д.).
+
+
+	/*const int size = 10;
+	int arr[size];
+
+	for (int i = 0; i < size; i++)
+	{
+	arr[i] = rand();
+	cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+	for (int i = 0, temp = 0; i < 5; i++)
+	{
+	temp = arr[i];
+	arr[i] = arr[9-i];
+	arr[9-i] = temp;
+	}
+	for (int i = 0; i < size; i++)
+	{
+	cout << arr[i] << "\t";
+	}
+	cout << endl;*/
+
+
+	// task 7 Создать массив из 10 целых случайных чисел. Поменять местами соседние элементы массива.
+
+
+	/*const int size = 10;
+	int arr[size];
+
+	for (int i = 0; i < size; i++)
+	{
+	arr[i] = rand();
+	cout << arr[i] << "\t";
+	}
+	cout << endl;
+
+	for (int i = 0, temp = 0; i < 10; i+=2)
+	{
+	temp = arr[i];
+	arr[i] = arr[i+1];
+	arr[i+1] = temp;
+	}
+	for (int i = 0; i < size; i++)
+	{
+	cout << arr[i] << "\t";
+	}
+	cout << endl;*/
+
+
+	// task 8 Создать два массива A и B из 5 элементов. Создать третий массив C из 10 элементов, 
+	// в который копируются элементы из первого и второго массива поочередно 
+	// (например, С[0]=A[0], c[1]=B[0], C[2]=A[1], C[3]=B[1] и т.д.).
+
+
+	/*const int size = 10;
+	int arr[size];
+	int arr_1[5] = {1,2,3,4,5};
+	int arr_2[5] = {1,2,3,4,5};
+
+	for (int i = 0; i < size; i+=2)
+	{
+	arr[i] = arr_1[i/2];
+	cout << arr[i] << "\t";
+	arr[i+1] = arr_2[i/2];
+	cout << arr[i+1] << "\t";
+	}*/
+
+
+	// task 9 Написать программу, копирующую один массив в другой следующим образом: 
+	//сначала копируются последовательно все элементы, большие 0, затем 
+	//последовательно все элементы, равные 0, а затем последовательно все элементы, меньшие 0.
+
+	/*const int size = 20;
+	int arr_one[size] {};
+	int arr_two[size] {};
+	int index = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+	arr_one[i] = rand() % 21 - 10;
+	cout << arr_one[i] << "\t";
+	}
+	cout << endl;
+
+	for (int i = 0; i < 3; i++)
+	{
+	for (int j = 0; j < size; j++)
+	{
+	if ((i == 0 && arr_one[j] < 0) || (i == 1 && arr_one[j] == 0) || (i == 2 && arr_one[j] > 0))
+	{
+	arr_two[index] = arr_one[j];
+	index++;
+	}
+	}
+	}
+
+	cout << endl << endl;
+	for (int i = 0; i < size; i++)
+	{
+	cout << arr_two[i] << "\t";
+	}*/
+
+
+	// task 10 Написать программу, копирующую последовательно элементы одного массива 
+	// размером 10 элементов в 2 массива размером 5 элементов каждый (задача, обратная 8).
+
+
+	/*int arr[10]= {1,1,2,2,3,3,4,4,5,5};
+	int arr_1[5] = {0};
+	int arr_2[5] = {0};
+
+	for (int i = 0; i < 5; i++)
+	{
+	arr_1[i] = arr[(2*i)];
+	cout << arr_1[i] << "\t";
+	arr_2[i] = arr[1+(2*i)];
+	cout << arr_2[i] << "\n";
+	}*/
+
+
+	// task 11 Даны 2 массива размерности M и N соответственно. 
+	// Необходимо переписать в третий массив общие элементы первых двух массивов без повторений.
+
+
+	/*const int size_1 = 10;
+	const int size_2 = 11;
+	const int size_3 = size_1;
+	int arr_1[size_1]{};
+	int arr_2[size_2]{};
+	int arr_3[size_2]{};
+	bool flag = false;
+	int index = 0;
+
+	for (int i = 0; i < size_1; i++)
+	{
+		arr_1[i] = rand() % 10;
+		cout << arr_1[i] << "\t";
+	}
+	cout << endl << endl;
+
+	for (int i = 0; i < size_2; i++)
+	{
+		arr_2[i] = rand() % 10;
+		cout << arr_2[i] << "\t";
+	}
+	cout << endl << endl;
+
+	for (int i = 0; i < size_1; i++)
+	{
+		for (int j = 0; j < size_2; j++)
+		{
+			if (arr_1[i] == arr_2[j])
+				flag = true;
+			for (int k = 0; k < index; k++)
+				{
+					if (arr_1[i] == arr_3[k])
+						flag = false;
+				}
+			if (flag == true)
+			{
+				arr_3[index] = arr_1[i];
+				index++;
+			}
+			flag = false;
+		}
+	}
+
+	for (int i = 0; i < index; i++)
+	{
+		cout << arr_3[i] << "\t";
+	}
+	cout << endl;*/
+
+
+	// task 12 Даны 2 массива размерности M и N соответственно. 
+	// Необходимо переписать в третий массив те элементы первого массива, которых нет во втором массиве, 
+	// без повторений.
+
+
+	/*const int size_1 = 10;
+	const int size_2 = 8;
+	const int size_3 = size_1;
+	int arr_1[size_1]{};
+	int arr_2[size_2]{};
+	int arr_3[size_2]{};
+	bool flag = true;
+	int index = 0;
+
+	for (int i = 0; i < size_1; i++)
+	{
+		arr_1[i] = rand() % 10;
+		cout << arr_1[i] << "\t";
+	}
+	cout << endl << endl;
+
+	for (int i = 0; i < size_2; i++)
+	{
+		arr_2[i] = rand() % 10;
+		cout << arr_2[i] << "\t";
+	}
+	cout << endl << endl;
+
+	for (int i = 0; i < size_1; i++)
+	{
+		for (int j = 0; j < size_2; j++)
+		{
+			if (arr_1[i] == arr_2[j])
+				flag = false;
+		}
+		for (int k = 0; k < index; k++)
+		{
+			if (arr_1[i] == arr_3[k])
+				flag = false;
+		}
+		if (flag == true)
+		{
+			arr_3[index] = arr_1[i];
+			index++;
+		}
+		flag = true;
+	}
+
+	for (int i = 0; i < index; i++)
+	{
+		cout << arr_3[i] << "\t";
+	}
+	cout << endl << endl;*/
+
+
+	// task 13 Создать массив из 20 случайных чисел в диапазоне от -10 до 20. 
+	// Определить максимальное количество подряд идущих положительных элементов, 
+	// не прерываемых ни нулями, ни отрицательными числами. Вывести найденный фрагмент.
+
+	/*const int size = 20;
+	int arr[size]{};
+	int count = 0, max_count = 0, index = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 31-10;
+		cout << arr[i] << "\t";
+	}
+	cout << endl << endl;
+
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i]>0)
+		{
+			count++;
+		}
+		if (arr[i]>0 && i == size - 1)
+		{
+			if (max_count < count)
+			{
+				max_count = count;
+				index = i+1;
+			}
+		}
+		if (arr[i] <= 0)
+		{
+			if (max_count < count)
+			{
+				max_count = count;
+				index = i;
+			}
+			count = 0;
+		}
+	}
+
+	cout << "Max = " << max_count << endl;
+	cout << "Index = " << index << endl;
+
+	for (int i = 0; i < max_count; i++)
+	{
+		cout << arr[index - max_count + i] << "\t";
+	}
+	cout << endl << endl;*/
+
+
+	// task 20 Осуществить циклический сдвиг массива на N элементов. 
+	// Направление сдвига указывает пользователь (например, массив 0,1,2,3,4,5,6,7,8,9 
+	// при циклическом сдвиге вправо на 3 элемента примет вид 7,8,9,0,1,2,3,4,5,6).
+
+
+	int arr[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	
+	int shift = 0;
+
+	cout << "Enter shift: ";
+	cin >> shift;
+
+	int size = sizeof(arr) / sizeof(int); // sizeoff даст объем мас., кот. делен. на разм. int даст кол-во элемен.
+
+	for (int i = 0; i < shift; i++)
+	{
+		int first_elem = arr[0];
+		for (int i = 0; i < size - 1; i++)
+		{
+			arr[i] = arr[i + 1];
+		}
+		arr[size - 1] = first_elem;
+	}
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+
+	system("pause");
+}

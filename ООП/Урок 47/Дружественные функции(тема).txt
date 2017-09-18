@@ -1,0 +1,19 @@
+Дружественные классы - это класс который может обратиться к private секции другого класса.(друга)
+class Foo//фу не может обратиться к классу Bar 			class Bar//бар может обратиться к классу Foo к полям private класса Foo
+{ friend class Bar;						{
+private:							public:
+	int c;								void F(Foo f)
+};									{	
+										cout << f.a;
+									}
+								};
+Дружественные функции - это функции которые могут обратиться к private секции дружественного класса.
+class Foo//фу не может обратиться к классу Bar 			
+{
+private:							
+	int c;
+	friend void F(Foo f);						void F(Foo f)
+};									{	
+										cout << f.a;
+									}
+								

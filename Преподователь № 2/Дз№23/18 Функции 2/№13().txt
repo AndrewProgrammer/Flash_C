@@ -1,0 +1,62 @@
+#include<iostream>
+#include <time.h>
+using namespace std;
+const int size = 10;
+int a[size];
+int shift1(int shift)
+{
+	if (shift >= 0 && shift <= 5)
+	{
+		for (int k = 0; k < shift; k++)
+		{
+			int temp = a[size - 1];
+			for (int p = size - 1; p > 0; p--)
+			{
+				a[p] = a[p - 1];
+			}
+			a[0] = temp;
+		}
+		cout << "ћассив с рандомными числами после сдвига: \n";
+		for (int o = 0; o < size; o++)
+		{
+			cout << a[o] << " ";
+		}
+		cout << endl;
+	}
+	else if (shift > 5 && shift <= 10)
+	{
+		for (int k = 0; k < shift; k++)
+		{
+			int temp = a[0];
+			for (int p = 0; p < size - 1; p++)
+				a[p] = a[p + 1];
+			a[size - 1] = temp;
+		}
+		cout << "ћассив с рандомными числами после сдвига: \n";
+		for (int o = 0; o < size; o++)
+		{
+			cout << a[o] << " ";
+		}
+		cout << endl;
+	}
+	return 0;
+}
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	for (int i = 0; i < size; i++)
+	{
+		a[i] = rand() % 101;
+	}
+	cout << "ћассив с рандомными числами: \n";
+	for (int o = 0; o < size; o++)
+	{
+		cout << a[o] << " ";
+	}
+	cout << endl;
+	int shift;
+	cout << "¬ведите количевство разр€дов дл€ сдвига: \n";
+	cin >> shift;
+	shift1(shift);
+}

@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	const int size = 12;
+	int index = 0, B[size] = { 5, 6, -3, 0, -9, 4, -2, 2, 0, 7, 8, -4 }, A[size];
+	for (int c = 0; c < size; c++)
+	{
+		if (B[c] < 0)
+		{
+			A[index++] = B[c];
+		}
+	}
+	for (int c = 0; c < size; c++)
+	{
+		if (B[c] == 0)
+		{
+			A[index++] = B[c];
+		}
+	}
+	for (int c = 0; c < size; c++)
+	{
+		if (B[c] > 0)
+		{
+			A[index++] = B[c];
+		}
+	}
+	 for (int a = 0; a < size; a++)
+	 {
+		 cout << A[a] << ' ';
+	 }
+}

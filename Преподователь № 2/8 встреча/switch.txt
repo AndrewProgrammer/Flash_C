@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	int a, b, res=0;
+	char choose;
+	cout << "\t\tCALC 1.0" << endl;
+	cout << "Select operation:" << endl;
+	cout << "Enter (+) for a+b" << endl;
+	cout << "Enter (-) for a-b" << endl;
+	cout << "Enter (*) for a*b" << endl;
+	cout << "Enter (/) for a/b" << endl;
+	cin >> choose;
+
+	system("cls");
+	cout << "You choose (" << choose << ")" << endl;
+	cout << "Enter a:" << endl;
+	cin >> a;
+	cout << "Enter b:" << endl;
+	cin >> b;
+	switch (choose)
+	{
+	case '+':
+		res = a + b;
+		break;
+	case '-':		
+		res = a - b;
+		break;
+	case '*':		
+		res = a * b;
+		break;
+	case '/':
+		if (b != 0)
+			res = a / b;
+		else
+		{
+			res = 0;
+			cout << "Error divide by zero" << endl;
+			system("pause");
+		}
+		break;
+	default:
+		cout << "Error operation" << endl;			
+		system("pause");	
+		break;
+	}
+
+	cout << "Result:" << res << endl;
+	
+}

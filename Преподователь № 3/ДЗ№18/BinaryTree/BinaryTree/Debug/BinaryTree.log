@@ -1,0 +1,29 @@
+﻿Build started 09.02.2016 20:43:53.
+     1>Project "E:\ \Программирование на C++\Преподователь № 3\ДЗ№18\BinaryTree\BinaryTree\BinaryTree.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+     1>e:\ \программирование на c++\преподователь № 3\дз№18\binarytree\binarytree\tree.h(23): error C2440: 'initializing' : cannot convert from 'TreeNode<T> *const ' to 'Tree<int> *'
+                 with
+                 [
+                     T=int
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+                 e:\ \программирование на c++\преподователь № 3\дз№18\binarytree\binarytree\tree.h(21) : while compiling class template member function 'Tree<int>::Tree(const Tree<int> &)'
+                 e:\ \программирование на c++\преподователь № 3\дз№18\binarytree\binarytree\main.cpp(30) : see reference to function template instantiation 'Tree<int>::Tree(const Tree<int> &)' being compiled
+                 e:\ \программирование на c++\преподователь № 3\дз№18\binarytree\binarytree\main.cpp(10) : see reference to class template instantiation 'Tree<int>' being compiled
+     1>e:\ \программирование на c++\преподователь № 3\дз№18\binarytree\binarytree\tree.h(24): error C2065: 'list' : undeclared identifier
+     1>e:\ \программирование на c++\преподователь № 3\дз№18\binarytree\binarytree\tree.h(24): error C2228: left of '.m_length' must have class/struct/union
+                 type is 'unknown-type'
+     1>e:\ \программирование на c++\преподователь № 3\дз№18\binarytree\binarytree\tree.h(26): error C2039: 'GetValue' : is not a member of 'Tree<int>'
+     1>e:\ \программирование на c++\преподователь № 3\дз№18\binarytree\binarytree\tree.h(27): error C2440: '=' : cannot convert from 'TreeNode<T> *' to 'Tree<int> *'
+                 with
+                 [
+                     T=int
+                 ]
+                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+     1>Done Building Project "E:\ \Программирование на C++\Преподователь № 3\ДЗ№18\BinaryTree\BinaryTree\BinaryTree.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.64

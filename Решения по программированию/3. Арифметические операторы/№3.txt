@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	int a,a1,a2,a3,c;
+	cout << "Enter 3-th number\n";
+	cin >> a;
+	a1 = a / 100;
+	a2 = a / 10 % 10;
+	a3 = a % 10;
+	c = (a1*10 + a3 );
+	cout << "Result 2-th number\n" << c << endl;
+}

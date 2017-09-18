@@ -1,0 +1,38 @@
+﻿Build started 18.02.2016 0:14:29.
+     1>Project "H:\ \Программирование на C++\Преподователь № 3\ДЗ№24\Strings\Strings\Strings.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt String.cpp
+         String.cpp
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\uniqueptrh.h(46): warning C4812: obsolete declaration style: please use 'SmartPtr<T>::SmartPtr' instead
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(71): warning C4800: 'char *const ' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(75): warning C4800: 'char *const ' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(79): warning C4800: 'char *const ' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(83): warning C4800: 'char *const ' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(87): warning C4800: 'char *const ' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(91): warning C4800: 'char *const ' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(128): warning C4018: '<' : signed/unsigned mismatch
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(281): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(287): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(289): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(293): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(299): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(301): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(320): warning C4018: '>' : signed/unsigned mismatch
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(340): warning C4018: '>' : signed/unsigned mismatch
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(375): warning C4018: '>' : signed/unsigned mismatch
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(404): warning C4018: '>' : signed/unsigned mismatch
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(494): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(500): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(502): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(266): warning C4717: 'String::CompareTo' : recursive on all control paths, function will cause runtime stack overflow
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(349): warning C4717: 'String::Insert' : recursive on all control paths, function will cause runtime stack overflow
+     1>h:\ \программирование на c++\преподователь № 3\дз№24\strings\strings\string.cpp(345): warning C4717: 'String::Insert' : recursive on all control paths, function will cause runtime stack overflow
+       Link:
+         E:\Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\ \Программирование на C++\Преподователь № 3\ДЗ№24\Strings\Debug\Strings.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\ \Программирование на C++\Преподователь № 3\ДЗ№24\Strings\Debug\Strings.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\ \Программирование на C++\Преподователь № 3\ДЗ№24\Strings\Debug\Strings.lib" /MACHINE:X86 Debug\Main.obj
+         Debug\String.obj
+         Strings.vcxproj -> H:\ \Программирование на C++\Преподователь № 3\ДЗ№24\Strings\Debug\Strings.exe
+     1>Done Building Project "H:\ \Программирование на C++\Преподователь № 3\ДЗ№24\Strings\Strings\Strings.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.78

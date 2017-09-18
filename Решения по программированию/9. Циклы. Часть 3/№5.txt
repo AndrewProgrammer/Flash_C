@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	for (int ryad = 1; ryad <= 8; ryad++)
+	{
+		if (ryad % 2 == 0)
+		{
+			cout << " ";
+		}
+		for (int kletka = 2; kletka <= 8; kletka++)
+		{
+			if (kletka % 2 == 0)
+			{
+				cout << (char)219;
+			}
+			else
+			{
+				cout << " ";
+			}
+			if (kletka % 8 == 0)
+			{
+				cout << "\n";
+			}
+		}
+	}
+}

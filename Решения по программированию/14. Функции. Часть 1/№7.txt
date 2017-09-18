@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+long double fact(int N)
+{
+	if (N < 0) 
+		return 0;
+	if (N == 0)
+		return 1; 
+	else 
+		return N * fact(N - 1);
+}
+void main()
+{
+	int N;
+	setlocale(0, "ru");
+	cout << "Введите число для вычисления факториала:\n";
+	cin >> N;
+	cout << "Факториал для числа " << N << " = " << fact(N) << endl;
+}

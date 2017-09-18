@@ -1,0 +1,46 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	const int row = 7;
+	const int col = 7;
+	int b[row][col], n = 0;
+	for (int y = 0; y < row; y++)
+	{
+		for (int x = 0; x < col; x++)
+		{
+			b[y][x] = rand() % 21;
+		}
+	}
+	int max = 0;
+	for (int y = 0; y < row; y++)
+	{
+		for (int x = 0; x < col; x++)
+		{
+			cout << b[y][x] << "\t";
+		}
+		cout << endl;
+	}
+	cout << endl;
+	for (int y = 0; y < row; y++)
+	{
+		for (int x = 0; x < col; x++)
+		{
+			if ((x <= row - y - 1))
+			{
+				cout << b[y][x] << "\t";
+				if (b[y][x] > max)
+				{
+					max = b[y][x];
+				}
+			}
+			else
+				cout << "\t";
+		}
+		cout << endl;
+	}
+	cout << "Max = " << max << endl;
+}

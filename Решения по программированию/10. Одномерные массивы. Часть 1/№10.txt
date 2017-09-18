@@ -1,0 +1,32 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 15;
+	int b[size];
+	int n = 0,c,max,min;
+	cout << "Создать диапозон от максимального до минимального\nВведите минимальное число диапозона и максимальное: \n";
+	cin >> min >> max;
+	srand(time(0));
+	rand();
+	for (int k = 0; k < size; k++)
+	{
+		b[k] = rand() % (max - min + 1) + min;
+	}
+	cout << "Массив с рандомными числами :\n";
+	for (int j = 0; j < 15; j++)
+	{
+		cout << b[j] << ' ';
+	}
+	cout << endl;
+	for (int i = 0; i < size; i++)
+	{
+		if (b[i] > -1)
+		{
+			n += i;
+		}
+	}
+	cout << "Сумма этих элементов в массиве = " << n << endl;
+}

@@ -1,0 +1,18 @@
+﻿Build started 18.02.2016 0:07:57.
+     1>Project "H:\ \Программирование на C++\Преподователь № 3\ДЗ№11\SmartPtr\SmartPtr.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>h:\ \программирование на c++\преподователь № 3\дз№11\smartptr\smartptr.h(37): warning C4812: obsolete declaration style: please use 'SmartPtr<T>::SmartPtr' instead
+     1>h:\ \программирование на c++\преподователь № 3\дз№11\smartptr\smartptr.h(37): warning C4812: obsolete declaration style: please use 'SmartPtr<int>::SmartPtr' instead
+                 h:\ \программирование на c++\преподователь № 3\дз№11\smartptr\smartptr.h(38) : while compiling class template member function 'SmartPtr<int>::SmartPtr(const SmartPtr<int> &)'
+                 h:\ \программирование на c++\преподователь № 3\дз№11\smartptr\source.cpp(9) : see reference to function template instantiation 'SmartPtr<int>::SmartPtr(const SmartPtr<int> &)' being compiled
+                 h:\ \программирование на c++\преподователь № 3\дз№11\smartptr\source.cpp(8) : see reference to class template instantiation 'SmartPtr<int>' being compiled
+       Link:
+         E:\Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\ \Программирование на C++\Преподователь № 3\ДЗ№11\Debug\SmartPtr.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\ \Программирование на C++\Преподователь № 3\ДЗ№11\Debug\SmartPtr.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\ \Программирование на C++\Преподователь № 3\ДЗ№11\Debug\SmartPtr.lib" /MACHINE:X86 Debug\Source.obj
+         SmartPtr.vcxproj -> H:\ \Программирование на C++\Преподователь № 3\ДЗ№11\Debug\SmartPtr.exe
+     1>Done Building Project "H:\ \Программирование на C++\Преподователь № 3\ДЗ№11\SmartPtr\SmartPtr.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.31

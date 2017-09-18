@@ -1,0 +1,105 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int * CreateArray(int size);
+void InitializeArray(int *ar, int size);
+void ShowArray(int *ar, int size);
+int* AddNewElemEnd(int *ar,int &size,int value);
+int * AddNewElemByIndex(int *ar, int&size, int value, int index);
+
+int** Create2Array(int r, int c);
+void AddElementToCol(int**mas, int &r, int &c, int value);
+
+void main()
+{
+	srand(time(0));
+	int size = 0;
+	cout << "Enter size" << endl;
+	cin >> size;
+	int * mas = CreateArray(size);
+	InitializeArray(mas, size);
+	ShowArray(mas,size);
+	mas = AddNewElemEnd(mas, size, 666);	
+	ShowArray(mas, size);
+	mas = AddNewElemByIndex(mas, size, 777, 3);
+	ShowArray(mas, size);
+	int rows = 5, cols = 5;
+	//** mas2 = Create2Array(rows, cols);
+
+	system("pause");
+}
+
+int * AddNewElemByIndex(int *ar, int&size, int value, int index)
+{
+	int* temp = CreateArray(size + 1);
+	size++;
+	for (int i = 0;i < size;i++)
+	{
+		if (i < index)
+			temp[i] = ar[i];
+		else if (i == index)
+			temp[i] = value;
+		else
+			temp[i] = ar[i-1];
+	}
+	
+	return temp;
+}
+
+void AddElementToCol(int**mas, int &r, int &c, int value)
+{
+	for (int i = 0;i < r;i++)
+	{
+		mas[i] = AddNewElemEnd(mas[i], c, value);
+	}
+}
+
+
+int** Create2Array(int r, int c)
+{
+	int **mas = new int*[r];
+	for (size_t i = 0; i < r; i++)
+	{
+		mas[i] = new int[c];
+	}
+	return mas;
+}
+
+int* AddNewElemEnd(int *ar, int &size, int value)
+{
+	int* temp = CreateArray(size+1);
+	for (int i = 0;i < size;i++)
+	{
+		temp[i] = ar[i];
+	}
+	temp[size] = value;
+	delete[]ar;
+	ar = NULL;
+	size++;
+	return temp;
+}
+
+
+void ShowArray(int *ar, int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << ar[i] << " ";
+	}
+	cout << endl;
+}
+
+void InitializeArray(int *ar, int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		ar[i] = rand() % 10;
+	}
+}
+
+int*CreateArray(int size)
+{
+	int *temp = new int[size];
+	return temp;
+}

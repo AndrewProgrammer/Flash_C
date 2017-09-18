@@ -1,0 +1,33 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int n = 20;
+	int a[n];
+	srand(time(0));
+	rand();
+	for (int k = 0; k < n; k++)
+	{
+		a[k] = rand() % 101;
+	}
+	cout << "Массив с рандомными числами :\n";
+	for (int j = 0; j < 15; j++)
+	{
+		cout << a[j] << ' ';
+	}
+	int min = 0, max = 0;
+	cout << endl;
+	for (int i = 1; i < 10; i++)
+	{
+		if (a[i] < a[min])
+			min = i;
+		else if (a[i] > a[max])
+			max = i;
+	}
+	cout << "Position of min number = " << min << endl;
+	cout << "Position of max number = " << max << endl;
+	cout << "Max number = " << a[max] << endl;
+	cout << "Min number = " << a[min] << endl;
+}

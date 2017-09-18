@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+char convert(int num)
+{
+	if (num >= 0 && num <= 9)
+	{
+		return num + 48;
+	}
+	else if (num >= 10 && num <= 35)
+	{
+		return num + 55;
+	}
+}
+void cons(int number, int notet)
+{
+	int count = 0;
+	int temp = number;
+	while (temp >= notet)
+	{
+		temp /= notet;
+		count++;
+	}
+	cout << convert(temp);
+	for (int i = count; i > 1; i--)
+	{
+		temp = number;
+		for (int j = i; j < i; j++)
+		{
+			temp /= notet;
+		}
+		temp %= notet;
+		cout << convert(temp);
+	}
+	temp = number;
+	temp %= notet;
+	if (count != 0)
+	{
+		cout << convert(temp);
+	}
+	cout << endl;
+}
+void main()
+{
+	int numb, base;
+	cout << "Enter number: \n";
+	cin >> numb;
+	cout << "Enter base: \n";
+	cin >> base;
+	cons(numb, base);
+}

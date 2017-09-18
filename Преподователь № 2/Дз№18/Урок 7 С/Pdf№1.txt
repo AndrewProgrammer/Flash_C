@@ -1,0 +1,39 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	const int row = 3;
+	const int col = 4;
+	int b[row][col],n = 0;
+	for (int y = 0; y < row; y++)
+	{
+		for (int x = 0; x < col; x++)
+		{
+			b[y][x] = rand() % 5;
+		}
+	}
+	for (int y = 0; y < row; y++)
+	{
+		for (int x = 0; x < col; x++)
+		{
+			cout.width(5);
+			cout << b[y][x];
+		}
+		cout << endl;
+	}
+	for (int y = 0; y < row; y++)
+	{
+		for (int x = 0; x < col; x++)
+		{
+			if (b[y][x] == 0)
+			{
+				n++;
+			}
+		}
+	}
+	cout << endl;
+	cout << n << endl;
+}

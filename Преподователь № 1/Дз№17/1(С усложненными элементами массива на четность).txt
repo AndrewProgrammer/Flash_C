@@ -1,0 +1,29 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 20;
+	int a[size];
+	srand(time(0));
+	rand();
+	for (int k = 0; k < size; k++)
+	{
+		a[k] = rand() % 101;
+	}
+	cout << "Массив с рандомными числами: \n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << a[j] << ' ';
+	}
+	cout << endl;
+	cout << "Индексы  и элементы массива которые являются четными: \n";
+	for (int i = 0; i < size; i++)
+	{
+		if (i % 2 && a[i] % 2 == 0)
+		{
+			cout << "a[" << i << "] = " << a[i] << endl;
+		}
+	}
+}

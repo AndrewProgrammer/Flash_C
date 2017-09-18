@@ -1,0 +1,19 @@
+Практика:
+template <unsigned int T>
+class Factorial
+{
+public:
+	static const unsigned int value = Factorial<T - 1>:: value * T;//Рекурсия
+};
+template <>
+class Factorial<0>//Полная специализация
+{
+public:
+	static const unsgined int value = 1;
+}
+void main()
+{
+	cout << Factorial <5(Шаблонный параметр)> :: value;//Создаю класс Factorial<5> и в нем поле value;
+	//Ответ, если в Factorial<Любое число> то в поле value будет записоватся value;
+}
+//Создались 4 класса Factorial№3,Factorial№2,Factorial№1(1 and 2 создались не явно),Factorial№0.

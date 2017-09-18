@@ -1,0 +1,107 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	/*double num1, num2, num3;
+	cout << "Enter num1:" << endl;
+	cin >> num1;
+	cout << "Enter num2:" << endl;
+	cin >> num2;
+	cout << "Enter num3:" << endl;
+	cin >> num3;
+	if (num1 == num2 && num1 == num3)
+	{
+		cout << "Numbers are equal" << endl;
+	}
+	else if (num1 > num2 && num1 > num3 && num2!=num3)
+		cout << "Max  num1 = " << num1;
+	else if (num2> num1 && num2> num3 &&  num1 != num3)
+		cout << "Max  num2 = " << num2;
+	else if (num3 > num1 && num3 > num2 &&  num1 != num3)
+		cout << "Max  num3 = " << num3;
+	else if (num1 == num2 && num1 > num3)
+		cout << "num1 && num2 are equal and max" << endl;
+	else if (num2 == num3 && num2 > num1)
+		cout << "num2 && num3 are equal and max" << endl;
+	else if (num1 == num3 && num1 > num2)
+		cout << "num1 && num3 are equal and max" << endl;*/
+
+	//char sym;
+	//cout << "Enter sym" << endl;
+	//cin >> sym;
+	//int code = (int)sym;
+	//if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122))
+	//	cout << "It`s letter" << endl;
+	//else if (code == 33 || (code >= 40 && code <= 41) ||
+	//	(code >= 44 && code <= 46) || (code >= 58 && code <= 59) || code == 63)
+	//	cout << "It`s symbol" << endl;
+	//else
+	//	cout << "Error"<< endl;
+
+	//33 40 41 44 45 46 58 59 63
+
+	//int a = 0;
+	//if (a<10)
+	//	cout << ";";
+	//else
+	//	cout << "";
+
+	//(a < 10) ? cout << ";" : cout << "";
+
+	//int x = 5, y = 10;
+	//int min = (x<y)?x:y;
+
+
+
+	//int X = 0;
+	//cin >> X;
+
+	//cout << ((X < 0) ? -X : X);
+
+
+
+	int a = 0, b = 0;
+	char choose = 0;
+
+	cout << "\t\tCALC v1.0"<< endl;
+	cout << "Enter (+) for a+b" << endl;
+	cout << "Enter (-) for a-b" << endl;
+	cout << "Enter (*) for a*b" << endl;
+	cout << "Enter (/) for a/b" << endl;
+	cin >> choose;
+	system("cls"); // clear screen
+	cout << "Selected (" << choose << ") operation" << endl;
+	cout << "Enter a:" << endl;
+	cin >> a;
+	cout << "Enter b:" << endl;
+	cin >> b;
+	switch (choose)
+	{
+	case '+':
+		cout << "Result = " << a + b << endl;
+		break;
+	case '-':
+		cout << "Result = " << a- b << endl;
+		break;
+	case '*':
+		cout << "Result = " << a* b << endl;
+		break;
+	case '/':
+		if (b != 0)
+			cout << "Result = " << a / b << endl;
+		else
+			cout << "Division by zero" << endl;
+		break;
+	default:
+		cout << "Error operation" << endl;
+		break;
+	}
+	system("pause"); // stop programm
+
+
+
+
+
+
+}

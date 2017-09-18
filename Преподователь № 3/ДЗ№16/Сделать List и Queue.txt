@@ -1,0 +1,4 @@
+4 штуки копирования(уже написаны)
+методы: bool Remove (T value)(Также как в массиве)
+void RemoveFirst();
+void RemoveLast();

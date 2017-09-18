@@ -1,0 +1,29 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	int sum = 0;
+	const int size = 8;
+	int b[size][size], min = 0, max = 20;
+	for (int y = 0; y < size; y++)
+	{
+		for (int x = 0; x < size; x++)
+		{
+			b[y][x] = rand() % (max - min + 1) + min;
+		}
+	}
+	for (int j = 0; j < size; j++)
+	{
+		for (int k = 0; k < size; k++)
+		{
+			cout.width(size);
+			cout << b[j][k];
+			if (k + j == size - 1)
+				sum += b[j][k];
+		}
+		cout << endl;
+	}
+	cout << sum << endl;
+}

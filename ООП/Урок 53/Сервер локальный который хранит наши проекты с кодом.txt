@@ -1,0 +1,5 @@
+На майкрософтовском аккаунте можно сохранить все коды, которые я написал.
+ПКМ по Solution /GetLatest Version.
+ПКМ по Solution /GetPrevious Version.
+Team/Connect to Foundation Server/Pending Changes
+View/Other Windows/Source Control Explorer.

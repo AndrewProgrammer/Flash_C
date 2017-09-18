@@ -1,0 +1,41 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+using namespace std;
+typedef unsigned int uint;
+void main()
+{
+	char path[_MAX_PATH];
+	cout << "Enter path to your picture: " << endl;
+	cin >> path;
+	char buff;
+	ofstream f(path, ios::binary);
+	if (f.is_open())
+	{
+		for (int i = 0;; i++)
+		{
+			string new_part("E:\\part.jpg");
+			int part_num = i + 1;
+			new_part.append(to_string(part_num));
+			ifstream part(new_part, ios::binary);
+			if (part.is_open())
+			{
+				part.read(&buff, 1);
+				while (!part.eof())
+				{
+
+					f.write(&buff, 1);
+					part.read(&buff, 1);
+				}
+				//f.seekp(-1, ios::cur);
+				part.close();
+			}
+			else
+			{
+				break;
+			}
+		}
+		f.close();
+	}
+	else cout << "Error Sourse is undefined\n";
+}

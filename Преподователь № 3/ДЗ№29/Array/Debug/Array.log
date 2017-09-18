@@ -1,0 +1,65 @@
+﻿Build started 10.02.2016 19:52:36.
+     1>Project "E:\ \Программирование на C++\Преподователь № 3\ДЗ№29\Array\Array.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(180): warning C4812: obsolete declaration style: please use 'Array<T>::Array' instead
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(190): warning C4812: obsolete declaration style: please use 'Array<T>::Array' instead
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(201): warning C4812: obsolete declaration style: please use 'Array<T>::Array' instead
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\main.cpp(9): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(64): warning C4018: '<' : signed/unsigned mismatch
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(61) : while compiling class template member function 'Array<int>::Array(void)'
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\main.cpp(10) : see reference to function template instantiation 'Array<int>::Array(void)' being compiled
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\main.cpp(10) : see reference to class template instantiation 'Array<int>' being compiled
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(78): warning C4018: '<' : signed/unsigned mismatch
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(75) : while compiling class template member function 'void Array<int>::Add(T)'
+                 with
+                 [
+                     T=int
+                 ]
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\main.cpp(16) : see reference to function template instantiation 'void Array<int>::Add(T)' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(87): warning C4018: '<' : signed/unsigned mismatch
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(86) : while compiling class template member function 'void Array<int>::PrintArr(void)'
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\main.cpp(17) : see reference to function template instantiation 'void Array<int>::PrintArr(void)' being compiled
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(94): warning C4018: '<' : signed/unsigned mismatch
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(92) : while compiling class template member function 'void Array<int>::Remove(T)'
+                 with
+                 [
+                     T=int
+                 ]
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\main.cpp(18) : see reference to function template instantiation 'void Array<int>::Remove(T)' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(102): warning C4018: '<' : signed/unsigned mismatch
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(118): warning C4018: '<' : signed/unsigned mismatch
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(115) : while compiling class template member function 'void Array<int>::RemoveAt(int)'
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\main.cpp(20) : see reference to function template instantiation 'void Array<int>::RemoveAt(int)' being compiled
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(131): warning C4018: '<' : signed/unsigned mismatch
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(130) : while compiling class template member function 'bool Array<int>::Contains(T)'
+                 with
+                 [
+                     T=int
+                 ]
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\main.cpp(22) : see reference to function template instantiation 'bool Array<int>::Contains(T)' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(144): warning C4018: '>' : signed/unsigned mismatch
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(143) : while compiling class template member function 'int &Array<int>::operator [](int)'
+                 e:\ \программирование на c++\преподователь № 3\дз№29\array\main.cpp(23) : see reference to function template instantiation 'int &Array<int>::operator [](int)' being compiled
+     1>e:\ \программирование на c++\преподователь № 3\дз№29\array\array.h(147): warning C4715: 'Array<int>::operator[]' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\ \Программирование на C++\Преподователь № 3\ДЗ№29\Array\Debug\Array.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\ \Программирование на C++\Преподователь № 3\ДЗ№29\Array\Debug\Array.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\ \Программирование на C++\Преподователь № 3\ДЗ№29\Array\Debug\Array.lib" /MACHINE:X86 Debug\Main.obj
+         Array.vcxproj -> E:\ \Программирование на C++\Преподователь № 3\ДЗ№29\Array\Debug\Array.exe
+     1>Done Building Project "E:\ \Программирование на C++\Преподователь № 3\ДЗ№29\Array\Array.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.75

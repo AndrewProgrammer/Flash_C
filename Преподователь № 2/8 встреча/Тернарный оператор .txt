@@ -1,0 +1,5 @@
+setlocale(0, "ru");
+	int a;
+	cout << "Введите символ: " << endl;
+	cin >> a;
+	(a == (char)a) ? cout << "Вы ввели цифру " << endl : cout << "Вы ввели символ" << endl;

@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	int a, b = 2015, c;
+	cout << "Enter year of your birthday\n";
+	cin >> a;
+	c = b - a;
+	cout << "Your age\n" << c << endl;
+}

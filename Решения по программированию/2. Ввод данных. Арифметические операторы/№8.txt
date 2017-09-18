@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double  S, P,d;
+	const int pr = 100;
+	cout << "Enter number\n";
+	cin >> S;
+	cout << "Enter %\n";
+	cin >> P;
+	d = (S*P)/ pr;
+	cout << "Procent form S\n" << d << "%" <<  endl;;
+}

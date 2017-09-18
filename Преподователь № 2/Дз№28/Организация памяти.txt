@@ -1,0 +1,3 @@
+http://habrahabr.ru/post/128991/
+
+https://rsdn.ru/article/cpp/ObjectsAndPointers.xml

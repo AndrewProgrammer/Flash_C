@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+bool predicat(char a)
+{
+	if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
+	{
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+}
+void main()
+{
+	char a;
+	setlocale(0, "ru");
+	cout << "Enter digit\n";
+	cin >> a;
+	if(predicat(a))
+	{
+		cout << a << endl;
+	}
+	else cout << "This is not letter" << endl;
+}

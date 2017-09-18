@@ -1,0 +1,32 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 15;
+	int a[size];
+	int b,n = 0;
+	srand(time(0));
+	rand();
+	for (int k = 0; k < size; k++)
+	{
+		a[k] = rand() % 101;
+	}
+	cout << "Массив с рандомными числами: \n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << a[j] << ' ';
+	}
+	cout << endl;
+	cout << "Введите число которое возможно будет находится в массиве: \n";
+	cin >> b;
+	for (int i = 0; i < size; i++)
+	{
+		if (a[i] == b)
+		{
+			n++;
+		}
+	}
+	cout << "Число которое вы ввели встречается = " << n << " раз в этом массиве" << endl;
+}

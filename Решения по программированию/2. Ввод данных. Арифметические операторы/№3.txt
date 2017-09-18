@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a,b;
+	cout << "Enter number" << endl;
+	cin >> a;
+	b = a * a * a;
+	cout << "This number in third degree\n" << b << endl;
+
+}

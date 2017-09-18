@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	int a,a1,b,b1,a2,a3,b2,b3,d,c;
+	cout << "Enter 1 3-th number\n";
+	cin >> a;
+	cout << "Enter 2 3-th number\n";
+	cin >> b;
+	a1 = a / 100;
+	a2 = a / 10 % 10;
+	a3 = a % 10;
+	b1 = b / 100;
+	b2 = b / 10 % 10;
+	b3 = b % 10;
+	c = (a1 * 100 + b2 * 10 + a3);
+	d = (b1 * 100 + a2 * 10 + b3);
+	cout << "1-changed number: " << c << " 2-changed number: " << d << endl;
+}

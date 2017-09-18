@@ -1,0 +1,93 @@
+
+#include <iostream> 
+using namespace std;
+
+void main()
+{
+	double number = 0;
+	cout << "Enter number" << endl;
+	cin >> number;					// 23.952412
+	number = number - (int)number;	// 0.952412
+	number *= 100;					// 95.2412;
+	number = (int)number;			// 95
+
+
+
+
+	//Пользователь вводит с клавиатуры дробное число. Округлить его до двух знаков после запятой и вывести на экран.
+	//double number = 0;
+	//cout << "Enter number: " << endl;
+	//cin >> number;
+	//									// 25.326897
+	//number = number * 100;				// 2532.6897
+	//number = number + 0.5555;			// 2533.2452	
+	//number = (int)number;				// 2533
+	//number = number / 100;				// 25.33
+
+	//cout << number << endl;
+			
+
+
+
+
+
+
+
+	//Пользователь вводит с клавиатуры размер одного фильма в гигабайтах и скорость Интернет - соединения в битах в секунду.
+	//Определить, за какое время(часы, минуты и секунды) скачается фильм.
+
+	//double size, speed,time;
+	//cout << "Enter size (GB): " << endl;
+	//cin >> size;
+	//cout << "Enter speed (bit/sec)" << endl;
+	//cin >> speed;
+
+	//size = size * 1024 ;			// size (mb)
+	//speed = speed / 8 /1024/1024;	// speed (mb/sec)
+	//time = size / speed;
+
+
+
+
+
+
+
+	//Зарплата менеджера составляет 100$ + 5 % от продаж.
+	//Пользователь вводит с клавиатуры общую сумму сделок менеджера за месяц.
+	//Посчитать итоговую зарплату менеджера.
+	// -----------------------------------------------------------
+
+	//float sum = 0, result = 0;
+	//cout << "Enter sales sum:" << endl;
+	//cin >> sum;
+	//result = sum * 5 / 100;
+	//result = result + 100;
+	//cout << "Result: " << result << endl;
+
+
+
+
+
+
+	//Пользователь вводит с клавиатуры время в секундах.
+	//Перевести это значение в дни, часы, минуты и секунды. (Например: 9876 секунд – это 2 часа 44 минуты 36 секунд)
+	// -----------------------------------------------------------
+	//float sec, days, hours, min;
+	//cout << "Enter seconds" << endl;
+	//cin >> sec;
+
+	//min = sec / 60;
+	//hours = min / 60;
+	//days = hours / 24;
+
+	//days = (int)days;
+	//hours = hours - (int)days * 24;
+	//hours = (int)hours;
+	//min = min - (int)hours * 60 - (int)days * 24 * 60;
+	//min = (int)min;
+	//sec = sec - (int)min * 60 - (int)hours * 60 * 60 - (int)days * 60 * 60 * 24;
+	//sec = (int)sec;
+	//
+	//cout << days << "d " << hours << "h " << min << "m " << sec << "s " << endl;
+
+}

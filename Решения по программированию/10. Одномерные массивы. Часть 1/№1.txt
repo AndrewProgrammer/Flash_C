@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	const int n = 5;
+	int a[n];
+	cout << "List:\n";
+	for (int g = 0; g < n; g++)
+	{
+		cin >> a[g];
+	}
+	for (int i = 0; i < n / 2; i++)
+	{
+		swap(a[i], a[n - i - 1]);
+	}
+	cout << "conversaly  list : \n";
+	for (int k = 0; k < n; k++)
+	{
+		cout << a[k] << ' ';
+	}
+	cout << endl;
+}

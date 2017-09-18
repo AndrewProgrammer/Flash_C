@@ -1,0 +1,3 @@
+https://rsdn.ru/article/cpp/cstr.xml
+
+https://msdn.microsoft.com/en-us/library/windows/desktop/aa364972(v=vs.85).aspx

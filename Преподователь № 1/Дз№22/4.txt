@@ -1,0 +1,22 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	const int n = 9;
+	const int m = 9;
+	int b[n][m];
+	cout << "Двумерный массив в котором первая цифра указывает на номер строки, а вторая на номер столбца:" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			b[i][j] = (i + 1) * 10 + j + 1;
+			cout.width(4);
+			cout << b[i][j];
+		}
+		cout << endl;
+	}
+}

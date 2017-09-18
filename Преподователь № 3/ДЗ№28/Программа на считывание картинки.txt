@@ -1,0 +1,37 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+using namespace std;
+typedef unsigned int uint;
+void main()
+{
+	char path[_MAX_PATH];
+	uint SizeOfPart;
+	cout << "Enter Max path to jpg: " << endl;
+	cin >> path;
+	cout << "Enter size of 1 part of jpg: " << endl;
+	cin >> SizeOfPart;
+	char buff;
+	ifstream f(path, ios::binary);
+	if (f.is_open())
+	{
+		for (int i = 0; !f.eof(); i++)
+		{
+			string new_part = "E:\\part.jpg";
+			int part_num = i + 1;
+			new_part.append(to_string(part_num));
+			ofstream part(new_part, ios::binary);
+			if (part.is_open())
+			{
+				for (int j = 0; j < SizeOfPart && !f.eof(); j++)
+				{
+					f.read(&buff, 1);
+					part.write(&buff, 1);
+				}
+				part.close();
+			}
+		}
+		f.close();
+	}
+	else cout << "Error Sourse is undefined\n";
+}

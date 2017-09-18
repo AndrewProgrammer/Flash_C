@@ -1,0 +1,38 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void PrintArray(int *mas, int size)
+{
+	for (int i = 0; i < size; i++, mas++)
+	{
+		cout << *mas << endl;
+	}
+}
+void FieldArray(int *mas, int size)
+{
+	for (int i = 0; i < size; i++, mas++)
+	{
+		*mas = rand() % 10 + 1;
+	}
+}
+void Array1(int *mas, int *mas1, int size)
+{
+	mas = mas + size - 1;
+	for (int i = size; i >= 0; i--, mas1++, mas--)
+	{
+		*mas1 = *mas;
+	}
+}
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	int mas[10], mas1[10];
+	FieldArray(mas, 10);
+	PrintArray(mas, 10);
+	Array1(mas, mas1, 10);
+	cout << endl;
+	cout << "New massiv :" << endl;
+	PrintArray(mas1, 10);
+	system("pause");
+}

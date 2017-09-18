@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+class Date
+{
+public:
+	int d;
+	int m;
+	int y;
+	void Show()
+	{
+		cout << y << " / " << m << " / " << d << endl;
+	}
+};
+void main()
+{
+	Date d1;
+	d1.m = 3;
+	d1.y = 1998;
+	d1.d = 7;
+	d1.Show();
+}

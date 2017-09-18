@@ -1,0 +1,60 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void numb(char s)
+{
+	for (int i = 0; i < s; i++)
+	{
+		if (s >= '0' && s <= '9')
+		{
+			system("cls");
+			cout << s << " = " << s << endl;
+			exit(0);
+		}
+		else if (s >= 10 || s < 0)
+		{
+			system("cls");
+			cout << "Error!\n";
+			exit(0);
+		}
+		else
+		{
+			system("cls");
+			cout << "Error!\n";
+			exit(0);
+		}
+	}
+}
+void symb(char s)
+{
+	for (int i = 0; i < s; i++)
+	{
+		if ((s >= 'a' && s <= 'z') || (s >= 'A' && s <= 'Z'))
+		{
+			system("cls");
+			cout << s <<  " = " << s << endl;
+			exit(0);
+		}
+		else
+		{
+			system("cls");
+			cout << "Error!\n";
+			exit(0);
+		}
+	}
+}
+void main()
+{
+	char a;
+	cout << "Enter digit: \n";
+	cin >> a;
+	if (a >= '0' && a <= '9')
+	{
+		numb(a);
+	}
+	else if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
+	{
+		symb(a);
+	}
+}

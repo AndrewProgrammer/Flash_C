@@ -1,0 +1,52 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	rand();
+	const int m = 9, size = m;
+	int b[size], value = 0,count=0, min = 15, max = 20;
+	for (int k = 0; k < size; k++)
+	{
+		b[k] = rand() % (max - min + 1) + min;
+	}
+	cout << "Массив с рандомными числами:\n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << b[j] << ' ';
+	}
+	cout << endl;
+	for (int i = 1; i < size; i++)
+	{
+		for (int j = i; j > 0 && b[j] < b[j - 1]; j--)
+		{
+			swap(b[j], b[j - 1]);
+		}
+	}
+	cout << "Отсортированый массив методом вставками:\n";
+	for (int k = 0; k < size; k++)
+	{
+		cout << b[k] << ' ';
+	}
+	cout << endl;
+	for (int i = 0; i < size; i++)
+	{
+		int value_t = b[i];
+		int count_t = 0;
+		for (int g = 0; g <size; g++)
+		{
+			if (b[g] == value_t)
+				count_t++;
+		}
+
+		if (count_t> count)
+		{
+			count = count_t;
+			value = value_t;
+		}
+
+	}
+	cout << "Moda = " << value <<" vctrechaetcya = " << count << endl;
+}

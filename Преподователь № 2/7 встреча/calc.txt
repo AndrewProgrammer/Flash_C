@@ -1,0 +1,93 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	int number = 0;
+	cout << "Enter number" << endl;	
+	cin >> number;
+	cout << ((number < 1) || (number>10));
+
+	int num = 0;
+	cout << "Enter num " << endl;
+	cin >> num;
+	cout << ((num > 0) && (num < 11));
+
+	// 1
+	int X = 10, Y = 5;
+	if (X > Y)
+	{
+		cout << "X bigger" << endl;
+	}
+	//2
+	int A = 10, B = 5, C = 12;
+	if (A > B && A < C)
+	{
+		cout << "A between B and C" << endl;
+	}
+	//3
+	int Q = 10, W = 15;
+	if (Q - W)
+	{
+		cout << "A!=B" << endl;
+	}
+	// 4
+	int R= 0;
+	if (++R)
+	{
+		cout << "true"<< endl;
+	}
+	else
+	{
+		cout << "false"<<endl;
+	}
+	// CALC
+
+	int first_num = 0, second_num = 0;
+	char operation;
+
+	cout << "\t\tCALC " << endl;
+	cout << "Enter first number" << endl;
+	cin >> first_num;
+	cout << "Enter second number" << endl;
+	cin >> second_num;
+	cout << "Enter '+' for sum" << endl;
+	cout << "Enter '-' for subtraction" << endl;
+	cout << "Enter '*' for multiplication" << endl;
+	cout << "Enter '/' for division" << endl;
+	cin >> operation;
+	
+	if (operation == '+')
+	{
+		cout << "Result = ";
+		cout << first_num + second_num << endl;
+	}
+	else if (operation == '-')
+	{
+		cout << "Result = ";
+		cout << first_num - second_num << endl;
+	}
+	else if (operation == '*')
+	{
+		cout << "Result = ";
+		cout << first_num * second_num << endl;
+	}
+	else if (operation == '/')
+	{
+		if (second_num == 0)
+		{
+			cout << "Error division by zero" << endl;
+		}
+		else
+		{
+			cout << "Result =";
+			cout << first_num / second_num << endl;
+		}
+	}
+	else
+	{
+		cout << "Error operation" << endl;
+	}
+
+	system("pause");
+}

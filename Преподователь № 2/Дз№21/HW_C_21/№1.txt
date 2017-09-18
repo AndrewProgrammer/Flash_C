@@ -1,0 +1,17 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+int a, s;
+double cube(double a)
+{
+	cout << a * a * a;
+	return a;
+}
+void main()
+{
+	setlocale(0, "ru");
+	int b;
+	cout << "Enter digit: \n";
+	cin >> b;
+	cube(b);
+}

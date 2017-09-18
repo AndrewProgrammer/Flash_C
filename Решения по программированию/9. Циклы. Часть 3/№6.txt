@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	int a,b, n = 0;
+	cout << "Enter number:\n";
+	cin >> a;
+	b = a;
+	for (; a > 0; a /= 10)
+	{
+		n++;
+	}
+	cout << n;
+	int s1 = 0, s2 = 0;
+	for (int i = 0; i < n / 2; i++)
+	{
+		s1 += b % 10;
+		b /= 10;
+	}
+	if (n % 2 != 0)
+		b /= 10;
+	for (int i = 0; i < n / 2; i++)
+	{
+		s2 += b % 10;
+		b /= 10;
+	}
+	if (s1 == s2)
+		cout << "palindrom\n";
+	else
+		cout << "ne palindrom\n";
+}

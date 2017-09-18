@@ -1,0 +1,85 @@
+template <typename T1,typename T2>//Принимает два разных параметра
+struct IsSame
+{
+	static const bool value = false;
+};
+template <typename T>
+struct IsSame<T,T>//Принимает два одинаковых параметра
+{
+	static const bool value  = true;//Поле должно быть статические константное и интегрального типа.
+}
+void main()
+{
+	cout << IsSame <int , char> :: value;
+	cout << IsSame <int ,int> :: value;
+}
+---------------------------------------------------------
+template <typename T1>//Принимает не указатель
+struct IsPointer
+{
+	static const bool value = false;
+};
+template <typename T>
+struct IsPointer<T*>//Принимает указатель
+{
+	static const bool value = true;
+};
+void main()
+{
+	cout << IsPointer <int> :: value;
+	cout << IsPointer <int*> :: value;
+}
+-------------------------------------------------------
+template <typename T>
+struct RemoveConst
+{
+	typedef T Type;//Шаблонный тип, создаю внутри Type от T
+}
+template <typename T>
+struct RemoveConst<const(сдесь наш const) T(сдесь Foo)>
+{
+	typedef T Type;
+};
+template <typename T>
+struct AddConst <const T>
+{
+	typedef T Type;
+};
+void main()
+{
+	AddConst<Foo>::Type c;
+	RemoveConst <Foo> :: Type a(объекты,переменные которые имеют тип данных Type, который объявлен как вложенный тип внутри класса RemoveConst<Foo>);
+	RemoveConst <const Foo>::Type b(объекты,переменные которые имеют тип данных Type, который объявлен как вложенный тип внутри класса RemoveConst<const Foo>);
+}
+-----------------------------------------------------------------------------------------------
+При генерации шаблонной функции и компилятор пытается преобразовать   нашу шаблонную функцию и при не правильной попытки генерации нашей функции, то компилятор сам выбирает другие шаблонные функции которые нам подойдут, при остсутствие хоть одной функции то будет ошибка на этапе компиляции, если же одна функция не найдена, но найдена другая, то ошибки не будет.
+SFINAE - Substitution Failure Is Not An Error(Ошибка подстановки не ялвяется ошибкой компиляции) Позволяет создавать ошибки в определенных ситуациях, и перебирает те шаблонные функции которые нам могут подойти.
+Overload resolution - все что подходит под наш вызов.
+---------------------------------------------------------------------------------------------------
+void F(int = 0)//Так написать можно
+template < bool enable , typename T = void>
+struct EnableIf
+{
+};
+template <typename T>
+struct EnableIf<true,T>
+{
+	typedef T Type;
+};
+//template <typename T>Наша старая шаблонная функция без SFINAE!!!
+	//Этап компиляции
+//T Sum(T a , T b)
+//{
+	//Этап выполнения
+//	return a + b;
+//}
+template <typename T, typename(Сдесь нет имени, и мы не сможем обратиться к нему) = void>
+T Sum(T a, T b)
+{
+	return a + b;
+}
+template <typename T, typename  = EnableIf<IfSame<T, int> ::>value:: Type>//ОШИБКА, без typename мы получаем значение
+template <typename T, typename  = typename EnableIf<IfSame<T, int> ::>value:: Type>//Все хорошо, так как мы добавили typename и в итоге мы получем тип данных
+--------------------------------------------------------------------------------------------------
+Можем подключить <type_traits>
+is_enable_if.Лежат все классы которые мы проходили на уроке.

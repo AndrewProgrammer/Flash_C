@@ -1,0 +1,20 @@
+h1 {
+	font-size: 12px; color: #006CD1; font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;}
+td {
+	font-size: 11px; color: #002268; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;}
+.wh {
+	font-size: 11px; color: white; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;}
+a {
+	font-size: 11px; color: #265597; text-decoration: underline; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;}
+a:hover {
+	text-decoration: none; color: #1B5BEB;}
+a.top {
+	font-size: 11px; color: #374976; text-decoration: none; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;}
+a.top:hover {
+	text-decoration: underline; color: black;}
+input {
+	font-size: 11px;}
+select {
+	font-size: 11px;}
+textarea {
+	font-size: 11px;}

@@ -1,0 +1,21 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+int a, b;
+double big()
+{
+	cout << "¬ведите 2 числа\n";
+	cin >> a >> b;
+	if (a < b)
+	{
+		cout << "—амое большое число из тех что вы ввели: " << b << endl;
+	}
+	else 
+		cout << "—амое большое число из тех что вы ввели: " << a << endl;
+	return 0;
+}
+void main()
+{
+	setlocale(0, "ru");
+	big();
+}

@@ -1,0 +1,1 @@
+var block = document.getElementById("teaser_3"); var text = '#5'; if(block){block.innerHTML = text;}

@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a, a1, a2;
+	cout << "Enter fractional 4-th number\n";
+	cin >> a;
+	a1 = (int)a;
+	a2 = (a - a1) * 100;
+	cout << "UAH:" << a1 << "\nCoins:" << a2 << endl;
+}

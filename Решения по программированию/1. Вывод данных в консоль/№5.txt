@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	cout << "  \"To be" << endl;
+	cout << "\t or not" << endl;
+	cout << "\t\t to be!\"" << endl;
+	cout << "\t\t\t \/Snakespeare\/" << endl;
+}

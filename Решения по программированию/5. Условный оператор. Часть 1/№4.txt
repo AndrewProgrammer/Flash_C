@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a,b,c;
+	cout << "Enter 1 number\n";
+	cin >> a;
+	cout << "Enter 2 number\n";
+	cin >> b;
+	cout << "Enter 3 number\n";
+	cin >> c;
+	if ( (a > b) && (a > c))
+	{
+		cout << "Number 1 is am bigest\n";
+	}
+	else if ((b > a) && (b > c))
+	{
+		cout << "Number 2 is am bigest\n";
+	}
+	else cout << "Number 3 is am bigest\n";
+}

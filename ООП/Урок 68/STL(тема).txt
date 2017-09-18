@@ -1,0 +1,65 @@
+<string>
+std::string s;
+------------------------
+//Конструктор
+string(string s , size_t pos,size_t len = npos);
+string(const char * s);
+string(const char * s, size_t n);
+const char * x = "Hello";
+string s(x + 2,2);//Сначала сдвигаем указателей а потом ставим длинну 2
+sring(size_t n, char c);
+string s(5,'a');//Вывод будет "aaaaa"
+--------------------------
+//Методы
+s.length();//Размер строки
+s.size();//Размер строки
+s.empty();//Проверка на пустая ли строка или нет?
+s.capacity();//Размер выделенной памяти под внутренний буфер
+s.clear();//Удаляет строку(очищает), и строка будет пустая
+s.at[7] = 'x';//Получение символа по индексу
+Если индекс за пределами - out_of_range;
+//APPEND method - возвращает ссылку на наш объект и плюс еще объект с типом данных string&.
+append(string s , size_t pos,size_t len = npos);
+append(const char * s);
+append(const char * s, size_t n);
+Например: s.append("Hello").append("World");
+//ASSIGN - присваивать
+assign(string s , size_t pos,size_t len = npos);
+assign(const char * s);
+assign(const char * s, size_t n);
+Например: s.append("Hello").assign("World");//В результате получим World
+//insert - вставка символов в не конечную позицию
+string& insert(size_t pos, const string& s); // Передать столько то символов в позицию в строке
+//метод удаления куска строки - erase
+string erase(size_t pos = 0, size_t len = npos); // С какого символа, сколько символов в нашей строке удалить.
+//replace - заменяют символы
+string replace(size_t pos, size_t len , const string& s); // откуда заменяем, сколько заменяем, и на что заменяем.
+-------------
+s.c_str(); // Возвращает указатель на внутренний буфер
+string s = "hello";
+char str[20];
+strcpy(str,c_str());//если не работает передача просто s то попробуй c_str() - так как он возвращает указатель на внутренний буфер
+------------
+//Поиск по строке с начала 
+size_t find(const string & s, size_t pos = 0);//Ищет вхождения того что мы передали в нашу строку и возвращает индекс первого вхождения.
+size_t find(const string * s, size_t pos = 0);//Только по символу
+size_t find(const string * s, size_t pos, size_t n);//Тут по символу с начала и на совпадения
+size_t find(char s, size_t pos = 0);//При нахождения этого символа возвращается индекс начала строки.
+//Поис строки с конца
+size_t find(char s, size_t pos = npos(ОТЛИЧИЕ!));
+//Возвращает индекс где нашел
+size_t find_first_of(char s, size_t pos = 0);
+//Возвращает индекс где нашел
+size_t find_last_of(char s, size_t pos = npos(ОТЛИЧИЕ!));
+//Возвращает первый символ который не в переданном наборе
+size_t find_first_not_of(char s, size_t pos = 0);
+//Возвращает последний символ который не в переданном наборе
+size_t find_last_not_of(char s, size_t pos = npos(ОТЛИЧИЕ!));
+//Метод константный который возращает строку в нашей подстроке.
+string substr(size_t pos = 0; size_t len = npos);//Принимает с какого и до какого будем возвращать подстроку из нашей строки
+//Функция для сравнения строк
+int compare(const string & s);//Если возвращено  < 0 то наша строка меньше, если 0 то строки равны если > 0 то наша строка больше.
+int compare(size_t pos, size_t len,string s);
+int compare(size_t,subpos,soze_t sublen);
+//Метод который возвращает число в строку( то есть был тип данных(к примеру int) получаем тип данных: string)
+string to_string(int n);//возвращает числов в строку.

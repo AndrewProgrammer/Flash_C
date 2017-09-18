@@ -1,0 +1,60 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+bool step = false;
+const int size = 10;
+void ubv(int a[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			for (int j = i - 1; j >= 0 && a[j] < a[i]; j--)
+			{
+				swap(a[j], a[j + 1]);
+			}
+		}
+	}
+	cout << "\nSortirovan po ubivaniy massiv: " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << a[i] << "  ";
+	}
+}
+void vos(int a[], int size)
+{
+	for (int i = 1; i < size; i++)
+	{
+		for (int j = i; j > 0 && a[j] < a[j - 1]; j--)
+		{
+			swap(a[j], a[j - 1]);
+		}
+	}
+	cout << "\nSortirovan po vosrastaniy massiv: " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << a[i] << "  ";
+	}
+}
+bool vib(int a[],int size)
+{
+	int	step = rand() % 2;
+	if (step)
+	{
+		vos(a, size);
+	}
+	else ubv(a,size);
+	return 0;
+}
+void main()
+{
+	srand(time(0));
+	int b[size], min = -10, max = 10;
+	for (int i = 0; i < size; i++)
+	{
+		b[i] = rand() % (max - min + 1) + min;
+		cout << "num " << i << " mas: " << b[i] << endl;
+	}
+	vib(b,size);
+
+}

@@ -1,0 +1,81 @@
+#include <iostream>
+using namespace std;
+const int hor = 8, ver = 8;
+int board[hor][ver] = { 0 };
+int horizontal[hor] = { 2, 1, -1, -2, -2, -1, 1, 2 };
+int vertical[ver] = { -1, -2, -2, -1, 1, 2, 2, 1 };
+int currentRow, currentColumn, countMove = 1, moveNumber;
+bool status = false;
+void boardPrint(int[][ver], int);
+void boardPrint(int b[][ver], int horiz)
+{
+	for (int i = 0; i < horiz; i++)
+	{
+		cout << "-------------------------------------" << endl;
+		for (int j = 0; j < horiz; j++)
+		{
+			if (j < ver - 1)
+				cout << "|" << " " << b[i][j] << " ";
+			else
+				cout << "|" << " " << b[i][j] << " " << "|";
+		}
+		cout << endl;
+	}
+	cout << "-------------------------------------" << endl;
+}
+void status1()
+{
+	bool status = false;
+	while (status == false)
+	{
+		cout << "Введите текущие координаты коня через пробел ([строка],[столбец])(0-7): ";
+		cin >> currentRow >> currentColumn;
+		if (currentRow < 8 && currentRow >= 0 && currentColumn < 8 && currentColumn >= 0)
+			status = true;
+		else
+			cout << "Таких координат не существует. Попробуейте снова." << endl;
+	}
+}
+void gameprocess()
+{
+	for (int move = 1; move <= 64; move++)
+	{
+		board[currentRow][currentColumn] = move;
+		status = false;
+
+		for (int j = 0; j < hor; j++)
+		if (currentRow + vertical[j] < 8 && currentRow + vertical[j] >= 0 && currentColumn + horizontal[j] < 8 && currentColumn + horizontal[j] >= 0 && board[currentRow + vertical[j]][currentColumn + horizontal[j]] == 0)
+		{
+			status = true;
+			break;
+		}
+
+		while (status == true)
+		{
+			moveNumber = rand() % 8;
+			if (currentRow + vertical[moveNumber] < 8 && currentRow + vertical[moveNumber] >= 0 && currentColumn + horizontal[moveNumber] < 8 && currentColumn + horizontal[moveNumber] >= 0 && board[currentRow + vertical[moveNumber]][currentColumn + horizontal[moveNumber]] == 0)
+			{
+				currentRow += vertical[moveNumber];
+				currentColumn += horizontal[moveNumber];
+				countMove++;
+				break;
+			}
+			else if (moveNumber == moveNumber)
+			{
+				break;
+			}
+		}
+		if (status == false)
+			break;
+	}
+}
+void main()
+{
+	setlocale(0, "ru");
+	boardPrint(board, hor);
+	status1();
+	gameprocess();
+	boardPrint(board, hor);
+	cout << endl << "Сделано ходов: " << countMove << endl;
+	system("pause");
+}

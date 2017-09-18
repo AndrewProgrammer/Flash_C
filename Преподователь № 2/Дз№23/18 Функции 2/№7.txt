@@ -1,0 +1,53 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void sort(int a[], int size)
+{
+	for (int i = 0; i < size / 2; i++)
+	{
+		for (int i = 0; i < size / 2; i++)
+		{
+			for (int j = i - 1; j >= 0 && a[j] < a[i]; j--)
+			{
+				swap(a[j], a[j + 1]);
+			}
+		}
+	}
+	cout << "\nFirst half of massiv: " << endl;
+	for (int i = 0; i < size / 2; i++)
+	{
+		cout << a[i] << "  ";
+	}
+}
+void sort1(int a[], int size)
+{
+	for (int i = size / 2; i < size; i++)
+	{
+		for (int i = size / 2; i < size; i++)
+		{
+			for (int j = i - 1; j >= size / 2 && a[j] > a[i]; j--)
+			{
+				swap(a[j], a[j + 1]);
+			}
+		}
+	}
+	cout << "\nSecond half of massiv: " << endl;
+	for (int i = size / 2; i < size; i++)
+		cout << a[i] << "  ";
+}
+void main()
+{
+	srand(time(0));
+	const int size = 10;
+	int b[size], min = -10, max = 10;
+	for (int i = 0; i < size; i++)
+	{
+		b[i] = rand() % (max - min + 1) + min;
+		cout << "num " << i << " mas: " << b[i] << endl;
+	}
+	cout << endl;
+	sort(b, size);
+	cout << endl;
+	sort1(b, size);
+}

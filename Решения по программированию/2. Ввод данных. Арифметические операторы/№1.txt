@@ -1,0 +1,8 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double avg,a = 10, b = 20;
+	avg = ((int)a + b) / 2;
+	cout << avg << endl;
+}

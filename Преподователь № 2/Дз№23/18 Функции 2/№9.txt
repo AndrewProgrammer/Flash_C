@@ -1,0 +1,58 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void sort(int b[], int size)
+{
+	int  last = size - 1, first = 0;
+	int leftNeg = -1;
+	int rightNeg = -1;
+	for (int i = size - 1; i >= 0; i--)
+	{
+		if (b[i]<0)
+		{
+			rightNeg = i;
+			cout << "Позиция самого правого отрицательного элемента: \n" << rightNeg << endl;
+			break;
+		}
+	}
+	for (int i = 0; i < size; i++)
+	{
+		if (b[i]<0)
+		{
+			leftNeg = i;
+			cout << "Позиция самого левого отрицательного элемента: \n" << leftNeg << endl;
+			break;
+		}
+	}
+	for (int i = leftNeg + 2; i < rightNeg; i++)
+	{
+		for (int j = i; j > leftNeg + 1 && b[j] < b[j - 1]; j--)
+		{
+			swap(b[j], b[j - 1]);
+		}
+	}
+	cout << "Отсортированый массив методом вставками между самым левым и самым правым отрицательным элементом:\n";
+	for (int k = 0; k < size; k++)
+	{
+		cout << b[k] << ' ';
+	}
+	cout << endl;
+}
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 10;
+	int b[size], min = -20, max = 20;
+	srand(time(0));
+	for (int k = 0; k < size; k++)
+	{
+		b[k] = rand() % (max - min + 1) + min;
+	}
+	cout << "Массив с рандомными числами: \n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << b[j] << ' ';
+	}
+	cout << endl;
+	sort(b, size);
+}

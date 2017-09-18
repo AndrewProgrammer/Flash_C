@@ -1,0 +1,12 @@
+#pragma once
+template <typename T>
+class Node//Класс может содержать ссылки и указатели.
+{
+private:
+	int m_value;
+	Node* m_next;//Указатель на объект такого же класса
+public:
+	Node(T value) : m_value(value){};
+	//Для value Getmethod.
+	//Для m_node Setmethod, Getmethod
+};

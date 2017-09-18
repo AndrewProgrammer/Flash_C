@@ -1,0 +1,16 @@
+class Foo
+{
+public:
+	virtual void F(int a =7);
+};
+class Bar : public Foo
+{
+public:
+	virtual void F(int a = 9);
+};
+void main()
+{
+	Foo * x = new Bar();
+	x -> Bar();//Тут будет 7 так как компилятор на этапе компиляции поставит 7.
+}
+//Все параметры по умолчанию пишутся в прототипах

@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a,b,x;
+	cout << "Enter 1 number\n";
+	cin >> a;
+	cout << "Enter 2 number\n";
+	cin >> b;
+	if (a > b)
+	{
+		x = b - 5 * a;
+	}
+	else if (a = b)
+	{
+		x = (5 - b) / a;
+	}
+	else if (a < b)
+	{
+		x = (a - 5) / b;
+	}
+	cout << "Answer:" << x << endl;
+}

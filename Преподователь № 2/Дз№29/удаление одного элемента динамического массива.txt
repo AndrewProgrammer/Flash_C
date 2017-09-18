@@ -1,0 +1,74 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+void InitArr(int *ar, int size);
+void PrintArr(int*ar, int size);
+int* DeleteSimpleNum(int*ar, int size);
+bool Is_Simple(int num);
+void main()
+{
+	srand(time(0));
+	int size = 0;
+	cin >> size;
+	int * mas = new int[size];
+	InitArr(mas, size);
+	PrintArr(mas, size);
+	cout << endl << endl;
+	mas = DeleteSimpleNum(mas, size);
+
+	system("pause");
+}
+void InitArr(int *ar, int size)
+{
+	for (int i = 0;i < size;i++)
+	{
+		ar[i] = rand() % 10;
+	}
+}
+void PrintArr(int*ar, int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << ar[i] << " ";
+	}
+}
+
+
+int* DeleteSimpleNum(int*ar, int size)
+{
+	int count = 0;
+	for (int i = 0;i < size;i++)
+	{
+		if (Is_Simple(ar[i]) == false)
+		{
+			count++;
+		}
+	}
+	int *newarr = new int[count];
+	for (size_t i = 0,index = 0; i < size; i++)
+	{
+		if (Is_Simple(ar[i]) == false)
+		{
+			newarr[index] = ar[i];
+			index++;
+		}
+	}
+	delete[] ar;
+	PrintArr(newarr, count);
+	return newarr;
+}
+
+bool Is_Simple(int num)
+{
+	if (num == 0 || num == 1)
+		return false;
+
+	for (int i = 2;i < num;i++)
+	{
+		if (num%i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}

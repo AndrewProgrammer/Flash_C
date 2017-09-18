@@ -1,0 +1,25 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+int a;
+double logic()
+{
+	cout << "¬ведите число\n";
+	cin >> a;
+	if (a > 0)
+	{
+		cout << "Ёто правда: " << a << endl;
+	}
+	else if (a < 0)
+	{
+		cout << "Ёто ложь: " << a << endl;
+	}
+	else 
+		cout << "Error!";
+	return 0;
+}
+void main()
+{
+	setlocale(0, "ru");
+	logic();
+}

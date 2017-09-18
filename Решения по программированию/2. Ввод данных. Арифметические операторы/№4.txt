@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double S,R;
+	const double PI = 3.14;
+	cout << "Enter number of radius" << endl;
+	cin >> R;
+	S = PI * R * R;
+	cout << "Square of the circle\n" << S << endl;
+
+}

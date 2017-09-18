@@ -1,0 +1,16 @@
+﻿Build started 02.12.2015 23:13:50.
+     1>Project "H:\ \Программирование на C++\Преподователь № 3\ДЗ№1\1. Введение в ООП\5. Порядок вызова конструкторов и деструкторов\Sample\Sample.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W4 /WX /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Foo.cpp Main.cpp
+         Main.cpp
+         Foo.cpp
+         Generating Code...
+       Link:
+         E:\Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\ \Программирование на C++\Преподователь № 3\ДЗ№1\1. Введение в ООП\5. Порядок вызова конструкторов и деструкторов\Debug\Sample.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\ \Программирование на C++\Преподователь № 3\ДЗ№1\1. Введение в ООП\5. Порядок вызова конструкторов и деструкторов\Debug\Sample.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\ \Программирование на C++\Преподователь № 3\ДЗ№1\1. Введение в ООП\5. Порядок вызова конструкторов и деструкторов\Debug\Sample.lib" /MACHINE:X86 Debug\Foo.obj
+         Debug\Main.obj
+         Sample.vcxproj -> H:\ \Программирование на C++\Преподователь № 3\ДЗ№1\1. Введение в ООП\5. Порядок вызова конструкторов и деструкторов\Debug\Sample.exe
+     1>Done Building Project "H:\ \Программирование на C++\Преподователь № 3\ДЗ№1\1. Введение в ООП\5. Порядок вызова конструкторов и деструкторов\Sample\Sample.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.75

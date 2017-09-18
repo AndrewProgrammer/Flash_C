@@ -1,0 +1,29 @@
+#include <iostream>
+#include <time.h>
+#include <Windows.h>
+using namespace std;
+HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+void SetColor(int a)
+{
+	SetConsoleTextAttribute(h, a);
+}
+void SetPosition(int a, int c)
+{
+	COORD pos;
+	pos.X = a;
+	pos.Y = c;
+	SetConsoleCursorPosition(h, pos);
+}
+void main()
+{
+
+	setlocale(0, "ru");
+	int a;
+	cout << "Enter number \n";
+	cin >> a;
+	int b, c;
+	cout << "Enter position of this number: \n";
+	cin >> b >> c;
+	SetPosition(b,c);
+	SetColor(a);
+}

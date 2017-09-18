@@ -1,0 +1,31 @@
+#pragma once
+#include "Node.h"
+template <typename U>
+class List
+{
+private:
+	Node * m_head = nullptr;//Ссылка на первый узел
+	int m_length;
+public: 
+	void Add(U value);
+};
+template <typename U>
+void List<U> ::Add(U value)
+{
+	Node<U> * node = new Node<U>(value);
+	//Node n(value);//Это не нужно так как это уходит
+	if (m_head == nullptr)
+	{
+		m_head = node;
+	}
+	else
+	{
+		Node<U> * last = m_head;//Запоминаем элемаент который мы проверяем
+		while (last.GetNext() != nullptr)//Есть ли следующий элемент
+		{
+			last = last.GetNext();//Смещение узла на +1
+		}
+		last.SetNext(node);//Связываем узел
+	}
+	++m_length;
+}

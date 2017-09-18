@@ -1,0 +1,27 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 10;
+	int a[size],min = 0,max = 256;
+	srand(time(0));
+	rand();
+	for (int k = 0; k < size; k++)
+	{
+		a[k] = rand() % (max - min + 1) + min;
+	}
+	cout << "Массив с рандомными числами: \n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << a[j] << ' ';
+	}
+	cout << endl;
+	cout << "Массив №2 без нулей числами: \n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << (char)a[j] << ' ';
+	}
+	cout << endl;
+}

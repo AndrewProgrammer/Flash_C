@@ -1,0 +1,85 @@
+Тоже нельзя разносить на Header and cpp.
+template <typename T>
+class Array
+{
+	T m_value;
+	//List <T> m_list;(Метод шаблонного класса)
+	void F(T a);
+};
+template <typename T>
+void List<T>::F(T a)
+{
+	
+}
+void main()
+{
+	List<int(пишем тип данных)> obj1;//можно
+	List<String> obj1;//можно
+	Array<int> obj;
+}
+------------------------------------------------------------
+class Array
+{
+	List <T>//Ошибка
+	List <int>//Можно
+	template <typename T>
+	void F(T a);
+};
+------------------------------------------------------------
+Комбинация шаблонного класса с шаблонными методами
+template <typename T>
+class Array
+{
+	public:
+	void F(T a);
+};
+template <typename T>
+void List<T>::F(T a)
+{
+	//Тело функции
+}
+void main()
+{
+	Array<int> a;
+	a.F(3);//Инт
+	a.G();//Уже инт
+}
+--------------------------------------------------------
+template <typename T>
+class Array
+{
+public:
+	void F(T a);
+	T G();
+	template <typename U>
+	T Sum( U a, U b);
+};
+template <typename T>
+template <typename U>
+T Array<T> :: Sum(U a, Y b)
+{
+	//Тело функции
+}
+template <typename T>
+class Array
+{
+public:
+	void F(T a);
+	T G();
+	template <typename U>
+	U Sum( U a, U b);
+	template <typename C>
+	C Dis( C a, C b);
+};
+template <typename T>
+template <typename U>
+U Array<T> :: Sum(U a, Y b)
+{
+	//Тело функции
+}
+template <typename T>
+template <typename C>
+C Array<T> :: Dis( C a, C b)
+{
+	//Тело функции
+}

@@ -1,0 +1,140 @@
+#include <iostream>
+using namespace std;
+int dates(int y, int y1, int m, int m1, int d, int d1)
+{
+	int counter = 1, year, month, day, n;
+	for (year = y; year <= y1; year++)
+	{
+		for (month = m; month <= 12; month++)
+		{
+			if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+			{
+				n = 31;
+			}
+			if (month == 4 || month == 6 || month == 9 || month == 11)
+			{
+				n = 30;
+			}
+			if (month == 2)
+			{
+				if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+				{
+					n = 29;
+				}
+				if (year % 4 != 0 || year % 100 == 0 && year % 400 != 0)
+				{
+					n = 28;
+				}
+			}
+			for (day = d; day <= n; day++)
+			{
+				counter++;
+			}
+			d = 1;
+		}
+		m = 1;
+	}
+	return counter;
+}
+bool vys(int year, int year2)
+{
+	bool res = false;
+	if (year % 4 == 0 || year2 % 4 == 0)
+		res = true;
+	if (year % 100 == 0 || year2 % 100 == 0)
+		res = false;
+	if (year % 400 == 0 || year2 % 400 == 0)
+		res = true;
+	return res;
+}
+bool prov1(int d, int m, int y)
+{
+	bool res = false;
+	if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12)
+	{
+		if (d > 31)
+		{
+			res = false;
+		}
+	}
+	if (m == 4 || m == 6 || m == 9 || m == 11)
+	{
+		if (d > 30)
+		{
+			res = false;
+		}
+	}
+	if (m == 2)
+	{
+		if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0)
+			if (d>29)
+			{
+				res = false;
+			}
+		if (y % 4 != 0 || y % 100 == 0 && y % 400 != 0)
+			if (d>28)
+			{
+				res = false;
+			}
+	}
+	return res;
+}
+bool prov2(int d1, int m1, int y1)
+{
+	bool res = false;
+	if (m1 == 1 || m1 == 3 || m1 == 5 || m1 == 7 || m1 == 8 || m1 == 10 || m1 == 12)
+	{
+		if (d1 > 31)
+		{
+			res = false;
+		}
+	}
+	if (m1 == 4 || m1 == 6 || m1 == 9 || m1 == 11)
+	{
+		if (d1 > 30)
+		{
+			res = false;
+		}
+	}
+	if (m1 == 2)
+	{
+		if (y1 % 4 == 0 && y1 % 100 != 0 || y1 % 400 == 0)
+			if (d1 > 29)
+			{
+				res = false;
+			}
+		if (y1 % 4 != 0 || y1 % 100 == 0 && y1 % 400 != 0)
+			if (d1 > 28)
+			{
+				res = false;
+			}
+	}
+	return res;
+}
+void main()
+{
+	setlocale(0, "ru");
+	int y1, y, m1, m, d1, d;
+	cout << "¬ведите первую дату:\n\t¬ведите число: ";
+	cin >> d;
+	cout << "\t¬ведите мес€ц: ";
+	cin >> m;
+	cout << "\t¬ведите год: ";
+	cin >> y;
+	cout << "¬ведите вторую дату:\n\t¬ведите число: ";
+	cin >> d1;
+	cout << "\t¬ведите мес€ц: ";
+	cin >> m1;
+	cout << "\t¬ведите год: ";
+	cin >> y1;
+	prov1(d, m, y);
+	prov2(d1, m1, y1);
+	if (y > y1 || y1 == 0 || y == 0 || m > 12 || m1 > 12 || d1 > 31 || d > 31)
+	{
+		cout << "Error!\n";
+		exit(0);
+	}
+	cout << "ѕроверка на высокосность: " << vys(y, y1) << endl;
+	cout << "\nѕроверка прошла успешно!\n";
+	cout << "–азница между двум€ датами в: " << dates(y, y1, m, m1, d, d1)  << " дней" << endl;
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+char toUpper(char c)
+{
+	if (c >= 97 && c <= 122)
+	{
+		c -= 32;
+		return c;
+	}
+	else
+	{
+		return NULL;
+	}
+}
+char toLower(char ch)
+{
+	if (ch >= 65 && ch <= 90)
+	{
+		ch += 32;
+		return ch;
+	}
+	else
+	{
+		return NULL;
+	}
+}
+void main()
+{
+	setlocale(0, "ru");
+	char a;
+	cout << "Enter digit\n";
+	cin >> a;
+	cout << "Символ в нижнем регистре: " << toLower(a) << endl;
+	cout << "Символ в верхнем регистре: " << toUpper(a) << endl; 
+}

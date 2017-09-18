@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	cout << "       Escape sequences" << endl;
+	cout << "\\a\t Bell (alert)" << endl;
+	cout << "\\b\t Backspace" << endl;
+	cout << "\\n\t New line" << endl;
+	cout << "\\r\t Carriage return" << endl;
+	cout << "\\t\t Horizontal tab" << endl;
+	cout << "\\\\\t Backslach \\" << endl;
+	cout << "\\\"\t Double quotation mark \"" << endl;
+	cout << "\\\'\t Single quotation mark \'" << endl;
+}

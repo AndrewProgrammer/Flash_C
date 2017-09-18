@@ -1,0 +1,136 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+bool Is_simple(int number)
+{
+	for (int i = 2; i < number; i++)
+	{
+		if (number % i == 0)
+			return false;
+	}
+	return true;
+}
+void InitAr(int *mas, int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		mas[i] = rand() % 10;
+	}
+}
+int *DelProst(int *Arr, int n)
+{
+	int *mas = new int[n + 1];
+	for (size_t i = 0; i <= n; i++)
+	{
+		if (Is_simple(Arr[i]) == true)
+		{
+			mas = Arr;
+		}
+	}
+	delete[] Arr;
+	Arr = 0;
+	InitAr(mas, n);
+	return mas;
+}
+void PrintAr(int *mas, int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << mas[i] << "\t";
+	}
+	cout << endl;
+}
+
+int * CreateAr(int size)
+{
+	int * temp = new int[size];
+	return temp;
+}
+void main()
+{
+	srand(time(0));
+	int count = 10;
+	int *Arr = CreateAr(10);
+	InitAr(Arr, count);
+	PrintAr(Arr, count);
+	Arr = DelProst(Arr, count);
+	PrintAr(Arr, count);
+	system("pause");
+}
+
+
+
+
+
+#include <time.h>
+#include <iostream>
+using namespace std;
+int** Create2Array(int rows, int cols)
+{
+	int ** temp = new int*[rows];
+	for (int i = 0; i < rows; i++)
+	{
+		temp[i] = new int[cols];
+	}
+	return temp;
+}
+void Init2array(int**mas, int rows, int cols)
+{
+	int max = 5, min = -5;
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			mas[i][j] = rand() % (max - min + 1) + min;
+		}
+	}
+}
+void Print2Array(int **mas, int rows, int cols)
+{
+	for (int y = 0; y < rows; y++)
+	{
+		for (int x = 0; x < cols; x++)
+		{
+			cout.width(5);
+			cout << mas[y][x];
+		}
+		cout << endl;
+	}
+}
+void **logic(int**mas, int rows, int cols, int pol, int nepol, int null)
+{
+	for (int y = 0; y < 5; y++)
+	{
+		for (int x = 0; x < 5; x++)
+		{
+			if (mas[y][x] > 0)
+			{
+				pol++;
+			}
+			else if (mas[y][x] < 0)
+			{
+				nepol++;
+			}
+			else
+			{
+				null++;
+			}
+		}
+	}
+	cout << "Количевство положительных элементов в двумерном массиве =  " << pol << endl;
+	cout << "Количевство отрицательных элементов в двумерном массиве  = " << nepol << endl;
+	cout << "Количевство нулевых элементов в двумерном массиве = " << null << endl;
+	return 0;
+}
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	int r = 5 , c = 5, min = -5, max = 5;
+	int pol = 0, nepol = 0, null = 0;
+	int**mas = Create2Array(r, c);
+	Init2array(mas, r, c);
+	Print2Array(mas, r, c);
+	logic(mas, r, c, pol, nepol, null);
+}

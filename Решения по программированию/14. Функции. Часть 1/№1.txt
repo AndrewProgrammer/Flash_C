@@ -1,0 +1,17 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+int a,s;
+double cube()
+{
+	cout << "¬ведите число\n";
+	cin >> s;
+	a = s * s * s;
+	cout << " уб этого числа: " << a << endl;
+	return 0;
+}
+void main()
+{
+	setlocale(0, "ru");
+	cube();
+}

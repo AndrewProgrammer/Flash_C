@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	double a,b,c;
+	cout << "Are you woman or man.Woman - 2 Man - 1\n";
+	cin >> a;
+	if (a == 1)
+	{
+		cout << "Enter your age\n";
+		cin >> b;
+		if (b >= 60)
+		{
+			cout << "time for you to retire\n";
+		}
+		else cout << "You is still working\n";
+	}
+	else if (a == 2)
+	{
+		cout << "Enter your age\n";
+		cin >> c;
+		if ((c >= 55) && (c <= 60))
+		{
+			cout << "time for you to retire\n";
+		}
+		else cout << "You is still working\n";
+	}
+	else cout << "Isnt Correct\n";
+}

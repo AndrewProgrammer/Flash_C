@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+class Date
+{
+private:
+	int d;
+	int m;
+	int y;
+public:
+	void SetDay(int day)
+	{
+		d = day;
+	}
+	void SetMonth(int month)
+	{
+		m = month;
+	}
+	void SetYear(int year)
+	{
+		y = year;
+	}
+	void Show()
+	{
+		cout << d << " / " << m << " / " << y << endl;
+	}
+};
+void main()
+{
+	Date d1;
+	d1.SetDay(1);
+	d1.SetMonth(12);
+	d1.SetYear(1999);
+	d1.Show();
+}

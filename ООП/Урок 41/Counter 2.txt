@@ -1,0 +1,74 @@
+#include <iostream>
+#include <Windows.h>
+
+using namespace std;
+
+class Gold
+{
+private:
+	int step = 1;
+	int min = Minnum();
+	int max = Maxnum();
+	int count = 0;
+public:
+	void ChangeCount()
+	{
+		count++;
+		if (min + count*step > max)
+		{
+			count = min;
+		}
+	}
+
+	void ShowNum()
+	{
+		cout << min + count * step << " ";
+	}
+	int Minnum()
+	{
+		int min;
+		cout << "Enter min";
+		cin >> min;
+		return min;
+	}
+
+	int Maxnum()
+	{
+		int max;
+		cout << "Enter max";
+		cin >> max;
+		return max;
+	}
+};
+
+int Minnum()
+{
+	int min;
+	cout << "Enter min";
+	cin >> min;
+	return min;
+}
+
+int Maxnum()
+{
+	int max;
+	cout << "Enter max";
+	cin >> max;
+	return max;
+}
+
+void main()
+{
+	/*int min = Minnum();
+	int max = Maxnum();*/
+	Gold s1;
+	for (size_t i = 0; i < 1000; i++)
+	{
+
+		s1.ChangeCount();
+		s1.ShowNum();
+
+		Sleep(95);
+	}
+
+}

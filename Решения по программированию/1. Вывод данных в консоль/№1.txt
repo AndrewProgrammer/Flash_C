@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	cout << "\tResume:" << endl;
+	cout << "Name:" << endl;
+	cout << "Surname" << endl;
+	cout << "Age:" << endl;
+	cout << "Hobby" << endl;
+}

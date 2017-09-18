@@ -1,0 +1,18 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+void main()
+{
+	int a, b;
+	cout << "Enter number1: \n";
+	cin >> a;
+	cout << "Enter number2: \n";
+	cin >> b;
+	int *ptra = &a, *ptrb = &b;
+	if (*ptra > *ptrb)
+	{
+		cout << "Max digit: " << *ptra << endl;
+	}
+	else cout << "Max digit: " << *ptrb << endl;
+	system("pause");
+}

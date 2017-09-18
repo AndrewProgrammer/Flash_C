@@ -1,0 +1,47 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	const int a = 6, b = 5;
+	int mas2[a][b], mas1[b], i, j;
+	cout << "Введите 6 х 5 элементов\n";
+	for (i = 0; i < a; ++i)
+	{
+		for (j = 0; j < b; ++j)
+		{
+			mas2[i][j] = rand() % 101;
+		}
+	}
+	cout << "\nМатрица\n";
+	for (i = 0; i < a; ++i)
+	{
+		for (j = 0; j < b; ++j)
+		{
+			cout << mas2[i][j] << "   ";
+		}
+		cout << "\n";
+	}
+	cout << "\nМассив\n";
+	for (j = 0; j < b; ++j)
+	{
+		for (i = 0; i < a; ++i)
+		{
+			if (0 == mas2[i][j] % 2)
+			{
+				mas1[j] = mas2[i][j];
+				break;
+			}
+		}
+		if (i == a)
+			mas1[j] = 0;
+	}
+	for (i = 0; i < b; ++i)
+		cout << mas1[i] << "   ";
+	cout << "\n";
+	system("pause");
+	return 0;
+}

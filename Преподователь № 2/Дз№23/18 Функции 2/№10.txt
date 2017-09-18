@@ -1,0 +1,31 @@
+#include <ctime>
+#include <iostream>
+using namespace std;
+int LinealSearch(int x[], int k, int key)
+{
+	for (int i = 0; i < k; i++)
+		if (x[i] == key)
+			return key;
+	return -1;
+}
+void main()
+{
+	setlocale(0, "ru");
+	srand(time(0));
+	const int size = 10;
+	int b[size], min = -10, max = 10, key;
+	for (int i = 0; i < size; i++)
+	{
+		b[i] = rand() % (max - min + 1) + min;
+
+	}
+	cout << "Массив с рандомными числами: \n";
+	for (int i = 0; i < size; i++)
+	{
+		cout << b[i] << ' ';
+	}
+	cout << endl;
+	cout << "Enter key: \n";
+	cin >> key;
+	cout << "Key = " <<  LinealSearch(b, size, key) << endl;
+}

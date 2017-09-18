@@ -1,0 +1,54 @@
+#include <time.h>
+#include <iostream>
+using namespace std;
+void main()
+{
+	setlocale(0, "ru");
+	const int size = 10;
+	int b[size], min = -20, max = 20;
+	srand(time(0));
+	rand();
+	for (int k = 0; k < size; k++)
+	{
+		b[k] = rand() % (max - min + 1) + min;
+	}
+	cout << "Массив с рандомными числами: \n";
+	for (int j = 0; j < size; j++)
+	{
+		cout << b[j] << ' ';
+	}
+	cout << endl;
+	int  last = size - 1, first = 0;
+	int leftNeg = -1;
+	int rightNeg = -1;
+	for (int i = size - 1; i >= 0; i--)
+	{
+		if (b[i]<0)
+		{
+			rightNeg = i;
+			break;
+		}
+	}
+	for (int i = 0; i < size; i++)
+	{
+		if (b[i]<0)
+		{
+			leftNeg = i;
+			break;
+		}
+	}
+	for (int i = leftNeg+2; i < rightNeg; i++)
+	{
+		for (int j = i; j > leftNeg+1 && b[j] < b[j - 1]; j--)
+		{
+			swap(b[j], b[j - 1]);
+		}
+	}
+	cout << "Отсортированый массив методом вставками:\n";
+	for (int k = 0; k < size; k++)
+	{
+		cout << b[k] << ' ';
+	}
+	cout << endl;
+	
+}
